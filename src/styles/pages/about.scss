@@ -35,14 +35,8 @@
         font-family: 'Bernier';
         font-size: 35px;
         text-align: center;
-        @include title-lines();
-        
         margin: 40px 0;
-        
-    }
-
-    &__title:hover h1:after {
-        background-color: crimson;
+        @include title-lines();
     }
 }
 

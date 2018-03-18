@@ -5,8 +5,8 @@
         display: block;
         width: 25px;
         height: 5px;
-        // width: 0;
-        // height: 0;
+        width: 0;
+        height: 0;
         transition: width .5s, height .5s;
         background-color: rgba(#cacbc8, .65);
         position: absolute;
@@ -19,18 +19,22 @@
         display: block;
         width: 25px;
         height: 5px;
-        // width: 0;
-        // height: 0;
+        width: 0;
+        height: 0;
         transition: width .5s, height .5s;
         background-color: rgba(#cacbc8, .65);
         position: absolute;
         top: 50%;
         left: 100%;
         transform: translate(100%, -50%);
-        }
-
-        
-
+    }
+    &:hover {
+        &:after, &:before{
+            width: 25px;
+            height: 5px;
+            transition: width .5s, height .5s;
+        } 
+    }
 }
 
 @mixin skill-circle($title) {
