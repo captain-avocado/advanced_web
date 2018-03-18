@@ -35,19 +35,23 @@ block content
                     .title__text Обо мне
                 img(src='images/avatar.jpg').avatar-area__img
             .personal__text-area.text-area
-                h1.text-area__title Кто я
+                h1 Кто я
                 p Далеко-далеко за словесными горами в странегласных и согласных живут рыбные тексты. На берегусвоего коварных ручеек имеет!
                 p Далеко-далеко за словесными, горами в странегласных и согласных живут рыбные тексты.
         .personal__right-col
             svg.personal__triangle.personal__triangle_right
                 use(xlink:href=`images/sprite.svg#triangle_right`)
-            .personal__text-area.text-area
-                h1.text-area__title Чем я могу быть вам полезен
+            .personal__text-area.text-area.text-area_left
+                h1 Чем я могу быть вам полезен
                 p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
             ul.personal__skills.skills
                 each item, index in activities
                     li.skills__item
                         .skills__title #{item}
-                        ul(class=`${item}`)
+                        ul(class=`skills__list ${item}`)
                             each skillItem in skillSet[index]
-                                li(class=`${item}__item ${skillItem}`)
+                                li(class=`circle ${item}__item ${skillItem}`)
+                                    svg.circle__icon(width='120', height='120', xmlns='http://www.w3.org/2000/svg')
+                                        circle.circle__main(r="40", cx="60", cy="60")
+                                        circle.circle__sector(r="40", cx="60", cy="60")
+                                        //- span.circle__text #{skillItem}
