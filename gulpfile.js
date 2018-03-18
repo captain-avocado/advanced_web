@@ -141,6 +141,7 @@ function watch() {
 
 function serve() {
     browserSync.init({
+        notify: false,
         server: {
             baseDir: paths.dest
         }

@@ -3,12 +3,24 @@ include ../blocks/socials
 include ../blocks/intro
 block head
     title Обо мне
+block variables
+    -
+
+        var activities = ['frontend', 'backend', 'workflow'];
+        var skillSet = [
+            ['html', 'css', 'js'],
+            ['php', 'mySQL', 'node.js', 'mongo.db'],
+            ['git', 'gulp', 'webpack']
+        ]
+
+
 block content
     section.section.hero
         header.hero__header.header
             .header__socials.socials_about
                 +socials('hero')
-            a(href='#').menu.header__menu
+            a(href='#').header__menu.menu
+                .menu__icon
         .hero__intro
             +intro('hero')
         a(href='#').hero__arrow.arrow
@@ -17,15 +29,23 @@ block content
 
     section.section.personal
         .personal__left-col
-            .personal__avatar-part.avatar-part
-                .avatar-part__title
-                img.avatar-part__img
-            .personal__text-part.text-part
-                .text-part__title
-                .text-part__text
-                    p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. На берегу своего коварных ручеек имеет!
-                    p Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+            .personal__triangle.personal__triangle_left
+            .personal__avatar-area.avatar-area
+                .avatar-area__title.title Обо мне
+                img.avatar-area__img
+            .personal__text-area.text-area
+                h1 Кто я
+                p Далеко-далеко за словесными горами в странегласных и согласных живут рыбные тексты. На берегусвоего коварных ручеек имеет!
+                p Далеко-далеко за словесными, горами в странегласных и согласных живут рыбные тексты.
         .personal__right-col
-            .personal__text-part
-
-
+            .personal__triangle.personal__triangle_left
+            .personal__text-area.text-area
+                h1 Чем я могу быть вам полезен
+                p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+            ul.personal__skills.skills
+                each item, index in activities
+                    li.skills__item
+                        .skills__title #{item}
+                        ul(class=`${item}`)
+                            each skillItem in skillSet[index]
+                                li(class=`${item}__item ${skillItem}`)
