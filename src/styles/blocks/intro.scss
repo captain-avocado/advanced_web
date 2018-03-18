@@ -1,4 +1,5 @@
 .intro {
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,10 +15,25 @@
     &__text {
         display: flex;
         flex-direction: column;
-        color: #455a64;
     }
 
     &__name {
         font-size: 28px;
+        &_welcome {
+            color: #455a64;
+        }
+        &_hero {
+            color: white;
+        }
+    }
+
+    &__site {
+        font-weight: 300;
+        &_welcome {
+            color: rgba(#455a64, .85);
+        }
+        &_hero {
+            color: rgba(white, .85);
+        }
     }
 }

@@ -1,0 +1,21 @@
+.social {
+    display: block;
+        height: 100%;
+        width: 100%;
+    &__icon {
+        &_welcome {
+            fill: $bg-green;
+            &:hover {
+                transition: .3s;
+                fill: rgba($bg-green-dark, 0.7);
+            }
+        }
+        &_hero {
+            fill: $transp-white;
+            &:hover {
+                transition: .3s;
+                fill: $white;
+            }
+        }
+    }
+}

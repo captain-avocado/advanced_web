@@ -1,4 +1,6 @@
 extends ../base
+include ../blocks/socials
+include ../blocks/intro
 block head
     title Авторизация
 block variables
@@ -30,9 +32,9 @@ block content
             .welcome
                 .welcome__info
                     .welcome__about
-                        include ../blocks/intro
+                        +intro('welcome')
                     .welcome__socials
-                        include ../blocks/socials
+                        +socials('welcome')
                 .welcome__buttons
                     ul.buttons
                         each item in buttonsList

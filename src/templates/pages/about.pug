@@ -1,17 +1,18 @@
 extends ../base
+include ../blocks/socials
+include ../blocks/intro
 block head
     title Обо мне
 block content
     section.section.hero
         header.hero__header.header
             .header__socials.socials_about
-                include ../blocks/socials
-            .header__menu.menu
+                +socials('hero')
+            a(href='#').menu.header__menu
         .hero__intro
-            include ../blocks/intro
-        //- svg.hero__arrow.arrow
+            +intro('hero')
         a(href='#').hero__arrow.arrow
-            svg(width='25', height='25').arrow__icon
+            svg(width='25', height='20').arrow__icon
                 use(xlink:href='images/sprite.svg#arrow')
 
     section.section.personal

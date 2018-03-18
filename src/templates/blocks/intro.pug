@@ -1,5 +1,6 @@
-.intro
-    img(src='images/avatar.jpg').intro__avatar
-    .intro__text
-        .intro__name Артем Калоев 
-        .intro__site Личный сайт веб-разработчика
+mixin intro(className)
+    .intro
+        img(src='images/avatar.jpg').intro__avatar
+        .intro__text
+            .intro__name(class=`intro__name_${className}`) Артем Калоев 
+            .intro__site(class=`intro__site_${className}`) Личный сайт веб-разработчика

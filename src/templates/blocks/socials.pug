@@ -1,22 +1,23 @@
--
-        var socialList = [
-            {
-                href: 'https://vk.com',
-                text: 'vk'
-            },
-            {
-                href: 'https://github.com/',
-                text: 'github'
-            },
-            {
-                href: 'https://ru.linkedin.com/',
-                text: 'linkedin'
-            }
-        ];
+mixin socials(iconClassName)
+    -
+            var socialList = [
+                {
+                    href: 'https://vk.com',
+                    text: 'vk'
+                },
+                {
+                    href: 'https://github.com/',
+                    text: 'github'
+                },
+                {
+                    href: 'https://ru.linkedin.com/',
+                    text: 'linkedin'
+                }
+            ];
 
-ul.socials
-    each item in socialList
-        li.socials__item
-            a(href=`${item.href}`).socials__link.social
-                svg(width='25', height='25').social__icon
-                    use(xlink:href=`images/sprite.svg#${item.text}`)
+    ul.socials
+        each item in socialList
+            li.socials__item
+                a(href=`${item.href}`).socials__link.social
+                    svg.social__icon(width='25', height='25', class=`social__icon_${iconClassName}`)
+                        use(xlink:href=`images/sprite.svg#${item.text}`)
