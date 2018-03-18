@@ -1,0 +1,40 @@
+@mixin title-lines() {
+    position: relative;
+    &:before {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 5px;
+        // width: 0;
+        // height: 0;
+        transition: width .5s, height .5s;
+        background-color: rgba(#cacbc8, .65);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-200%, -50%);
+    }
+    &:after {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 5px;
+        // width: 0;
+        // height: 0;
+        transition: width .5s, height .5s;
+        background-color: rgba(#cacbc8, .65);
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(100%, -50%);
+        }
+
+        &:hover {
+
+        }
+
+}
+
+@mixin skill-circle($title) {
+    
+}

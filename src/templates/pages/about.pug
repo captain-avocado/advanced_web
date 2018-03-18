@@ -26,19 +26,21 @@ block content
         a(href='#').hero__arrow.arrow
             svg(width='25', height='20').arrow__icon
                 use(xlink:href='images/sprite.svg#arrow')
-
     section.section.personal
         .personal__left-col
-            .personal__triangle.personal__triangle_left
+            svg.personal__triangle.personal__triangle_left
+                use(xlink:href=`images/sprite.svg#triangle_left`)
             .personal__avatar-area.avatar-area
-                .avatar-area__title.title Обо мне
-                img.avatar-area__img
+                .avatar-area__title.title 
+                    .title__text Обо мне
+                img(src='images/avatar.jpg').avatar-area__img
             .personal__text-area.text-area
                 h1 Кто я
                 p Далеко-далеко за словесными горами в странегласных и согласных живут рыбные тексты. На берегусвоего коварных ручеек имеет!
                 p Далеко-далеко за словесными, горами в странегласных и согласных живут рыбные тексты.
         .personal__right-col
-            .personal__triangle.personal__triangle_left
+            svg.personal__triangle.personal__triangle_right
+                use(xlink:href=`images/sprite.svg#triangle_right`)
             .personal__text-area.text-area
                 h1 Чем я могу быть вам полезен
                 p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.

@@ -47,12 +47,12 @@ function styles() {
         ],
         fix: true
       }))
+    .pipe($gp.groupCssMediaQueries())
     .pipe($gp.autoprefixer({
         browsers: ["last 2 versions"],
         cascade: false
     }))
-    .pipe($gp.groupCssMediaQueries())
-    .pipe($gp.cleancss())
+    .pipe($gp.cssnano())
     .pipe($gp.rename({  suffix: '.min'  }))
     .pipe($gp.sourcemaps.write('/'))
     .pipe(gulp.dest(paths.dest + 'styles/'))
@@ -159,8 +159,11 @@ gulp.task('fonts', fonts);
 gulp.task('watch', watch);
 gulp.task('serve', serve);
 //чекнуть соурсмапы
-gulp.task('default', gulp.series(
+gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(styles, templates, sprite, images, scripts, fonts),
+    gulp.parallel(styles, templates, sprite, images, scripts, fonts)
+));
+gulp.task('default', gulp.series(
+    gulp.task('build'),
     gulp.parallel(watch, serve)
 ));

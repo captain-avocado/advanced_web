@@ -20,7 +20,7 @@
     &__name {
         font-size: 28px;
         &_welcome {
-            color: #455a64;
+            color: $text-dark;
         }
         &_hero {
             color: white;
@@ -30,7 +30,7 @@
     &__site {
         font-weight: 300;
         &_welcome {
-            color: rgba(#455a64, .85);
+            color: rgba($text-dark, .85);
         }
         &_hero {
             color: rgba(white, .85);

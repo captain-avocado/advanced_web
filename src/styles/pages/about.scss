@@ -1,0 +1,72 @@
+.personal {
+    display: flex;
+    
+    &__left-col {
+        width: 50%;
+        padding: 2% 8% 4% 8%;
+        background-color: $bg-white;
+    }
+
+    &__right-col {
+        width: 50%;
+        padding: 2% 8% 4% 8%;
+        background-color: $bg-beige;
+    }
+    
+}
+
+.avatar-area {
+    &__img {
+        max-width: 100%;
+    }
+}
+
+.text-area {
+    color: $text-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        width: fit-content;
+        max-width: 60%;
+        text-transform: uppercase;
+        font-family: 'Bernier';
+        font-size: 35px;
+        text-align: center;
+        @include title-lines();
+        &:hover  {
+            background-color: crimson;
+        }
+
+        margin: 40px 0;
+        
+    }
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    &__text {
+        text-transform: uppercase;
+        font-family: 'Bernier';
+        width: fit-content;
+        color: $text-dark;
+        font-size: 63px;
+        @include title-lines();
+    }
+    margin: 70px 0;
+}
+
+.skills {
+    
+    &__title {
+        font-size: 28px;
+        font-weight: 400;
+        color: $text-dark;
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+}
