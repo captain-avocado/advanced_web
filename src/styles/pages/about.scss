@@ -27,6 +27,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     h1 {
         width: fit-content;
         max-width: 60%;
@@ -35,12 +36,13 @@
         font-size: 35px;
         text-align: center;
         @include title-lines();
-        &:hover  {
-            background-color: crimson;
-        }
-
+        
         margin: 40px 0;
         
+    }
+
+    &__title:hover h1:after {
+        background-color: crimson;
     }
 }
 
