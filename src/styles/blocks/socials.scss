@@ -1,0 +1,11 @@
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    &__item {
+        &:not(:last-of-type) {
+            margin-right: 30px;
+        }
+    }
+}

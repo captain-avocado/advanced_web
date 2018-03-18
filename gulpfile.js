@@ -61,7 +61,7 @@ function styles() {
 
 function templates() {
     // clean('*.html');
-    return gulp.src([paths.src + 'templates/**/*.pug', `!${paths.src}templates/base.pug`])
+    return gulp.src(paths.src + 'templates/pages/*.pug')
     .pipe($gp.plumber({
         errorHandler: reportError
     }))
@@ -75,13 +75,11 @@ function scripts() {
     .pipe($gp.plumber({
         errorHandler: reportError
     }))
+    .pipe($gp.sourcemaps.init())
     .pipe($gp.webpack(webpackConfig, webpack))
-    
-    // .pipe($gp.sourcemaps.init())
-    // .pipe($gp.babel({ presets: ['env'] }))
-    // .pipe($gp.uglify())
-    // .pipe($gp.concat('scripts.min.js'))
-    // .pipe($gp.sourcemaps.write('/'))
+    .pipe($gp.uglify())
+    .pipe($gp.concat('scripts.min.js'))
+    .pipe($gp.sourcemaps.write('/'))
     .pipe(gulp.dest(paths.dest + 'scripts/'));
 }
 

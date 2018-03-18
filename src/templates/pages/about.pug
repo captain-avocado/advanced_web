@@ -1,0 +1,30 @@
+extends ../base
+block head
+    title Обо мне
+block content
+    section.section.hero
+        header.hero__header.header
+            .header__socials.socials_about
+                include ../blocks/socials
+            .header__menu.menu
+        .hero__intro
+            include ../blocks/intro
+        //- svg.hero__arrow.arrow
+        a(href='#').hero__arrow.arrow
+            svg(width='25', height='25').arrow__icon
+                use(xlink:href='images/sprite.svg#arrow')
+
+    section.section.personal
+        .personal__left-col
+            .personal__avatar-part.avatar-part
+                .avatar-part__title
+                img.avatar-part__img
+            .personal__text-part.text-part
+                .text-part__title
+                .text-part__text
+                    p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. На берегу своего коварных ручеек имеет!
+                    p Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+        .personal__right-col
+            .personal__text-part
+
+

@@ -1,0 +1,23 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__avatar {
+        border-radius: 50%;
+        
+        //FIX
+        max-width: 40%;
+        max-width: 150px;
+        //END FIX
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        color: #455a64;
+    }
+
+    &__name {
+        font-size: 28px;
+    }
+}

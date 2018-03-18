@@ -56,13 +56,6 @@
     }
 }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .buttons {
     display: flex;
     border-radius: 0 0 4px 4px;
@@ -90,18 +83,6 @@
     &:hover {
         transition: .3s;
         background-color: rgba($bg-green-dark, 0.7);
-    }
-}
-
-.socials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
-    &__item {
-        &:not(:last-of-type) {
-            margin-right: 30px;
-        }
     }
 }
 

@@ -1,22 +1,8 @@
-extends ./base
+extends ../base
 block head
     title Авторизация
 block variables
     -
-        var socialList = [
-            {
-                href: 'https://vk.com',
-                text: 'vk'
-            },
-            {
-                href: 'https://github.com/',
-                text: 'github'
-            },
-            {
-                href: 'https://ru.linkedin.com/',
-                text: 'linkedin'
-            }
-        ];
 
         var buttonsList = [
             {
@@ -44,18 +30,9 @@ block content
             .welcome
                 .welcome__info
                     .welcome__about
-                        .about
-                            img(src='images/avatar.jpg').welcome__avatar
-                            .welcome__text
-                                .welcome__name Артем Калоев 
-                                .welcome__site Личный сайт веб-разработчика
+                        include ../blocks/intro
                     .welcome__socials
-                        ul.socials
-                            each item in socialList
-                                li.socials__item
-                                    a(href=`${item.href}`).socials__link.social
-                                        svg(width='25', height='25').social__icon
-                                            use(xlink:href=`images/sprite.svg#${item.text}`)
+                        include ../blocks/socials
                 .welcome__buttons
                     ul.buttons
                         each item in buttonsList

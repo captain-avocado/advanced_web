@@ -1,0 +1,22 @@
+-
+        var socialList = [
+            {
+                href: 'https://vk.com',
+                text: 'vk'
+            },
+            {
+                href: 'https://github.com/',
+                text: 'github'
+            },
+            {
+                href: 'https://ru.linkedin.com/',
+                text: 'linkedin'
+            }
+        ];
+
+ul.socials
+    each item in socialList
+        li.socials__item
+            a(href=`${item.href}`).socials__link.social
+                svg(width='25', height='25').social__icon
+                    use(xlink:href=`images/sprite.svg#${item.text}`)
