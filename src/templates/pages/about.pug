@@ -8,9 +8,9 @@ block variables
 
         var activities = ['frontend', 'backend', 'workflow'];
         var skillSet = [
-            ['html', 'css', 'js'],
-            ['php', 'mySQL', 'node.js', 'mongo.db'],
-            ['git', 'gulp', 'webpack']
+            ['HTML5', 'CSS3', 'JavaScript & jQuery'],
+            ['PHP', 'mySQL', 'Node.js & npm', 'Mongo.db'],
+            ['Git', 'Gulp', 'Webpack']
         ]
 
 
@@ -26,10 +26,11 @@ block content
         a(href='#').hero__arrow.arrow
             svg(width='25', height='20').arrow__icon
                 use(xlink:href='images/sprite.svg#arrow')
+        svg(viewBox='0 0 1200 130', preserveAspectRatio='none').hero__triangles.triangles
+                polygon(points='0,0 600,110 600,130 0,130').triangles__left
+                polygon(points='600,110 1200,0 1200,130 600,130').triangles__right
     section.section.personal
         .personal__left-col
-            svg.personal__triangle.personal__triangle_left
-                use(xlink:href=`images/sprite.svg#triangle_left`)
             .personal__avatar-area.avatar-area
                 .avatar-area__title.title 
                     .title__text Обо мне
@@ -39,8 +40,6 @@ block content
                 p Далеко-далеко за словесными горами в странегласных и согласных живут рыбные тексты. На берегусвоего коварных ручеек имеет!
                 p Далеко-далеко за словесными, горами в странегласных и согласных живут рыбные тексты.
         .personal__right-col
-            svg.personal__triangle.personal__triangle_right
-                use(xlink:href=`images/sprite.svg#triangle_right`)
             .personal__text-area.text-area.text-area_left
                 h1 Чем я могу быть вам полезен
                 p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
@@ -54,4 +53,5 @@ block content
                                     svg.circle__icon(width='120', height='120', xmlns='http://www.w3.org/2000/svg')
                                         circle.circle__main(r="40", cx="60", cy="60")
                                         circle.circle__sector(r="40", cx="60", cy="60")
-                                        //- span.circle__text #{skillItem}
+                                        text(x="60" y="65").circle__text #{skillItem}
+                                    .circle__text #{skillItem}

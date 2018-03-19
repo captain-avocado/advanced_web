@@ -14,9 +14,17 @@
     }
     &__arrow {
         position: absolute;
-        top: 95%;
+        top: 90%;
         left: 50%;
         transform: translate(-50%, -100%);
+        z-index: 10;
+    }
+
+    &__triangles {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform: translateY(-100%);
     }
 }
 
@@ -76,5 +84,14 @@
             transition: .3s;
             fill: $white;
         }
+    }
+}
+
+.triangles {
+    &__left {
+        fill: $bg-white;
+    }
+    &__right {
+        fill: $bg-beige;
     }
 }

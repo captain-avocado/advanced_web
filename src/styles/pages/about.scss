@@ -79,16 +79,23 @@
     &__list {
     display: flex;
     }
-    &__item:hover .circle__sector {
-        stroke-dashoffset: 3.14*40;
-        transition: stroke-dashoffset 1s;
+    &__item {
+        &:hover .circle__sector {
+            stroke-dashoffset: 3.14*40;
+            transition: stroke-dashoffset 1s;
+        }
     }
 }
 
 .circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
     &__icon {
         fill: none;
         stroke-width: 20;
+        // position: relative;
+
         // &:hover > .circle__sector {
         //     stroke-dashoffset: 3.14*40;
         //     transition: stroke-dashoffset 1s;
@@ -98,6 +105,7 @@
     &__main {
         stroke: #ccc;
         fill: none;
+        position: relative;
     }
 
     &__sector {
@@ -107,5 +115,21 @@
         stroke-dasharray: 2*3.14*40;
         stroke-dashoffset: 2*3.14*40;
         transition: stroke-dashoffset 1s;
+    }
+
+    &__text {
+        // text-anchor: middle;
+        // display: block;
+        // fill: $bg-green;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $bg-green;
+        max-width: 70px;
+        word-wrap: break-word;
+        text-align: center;
+        font-size: 12px;
+        line-height: 14.7px;
     }
 }
