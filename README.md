@@ -1,5 +1,9 @@
 # [Gulp-Webpack] project template
 
+
+Перейти на github-pages: https://klv-codehub.github.io/advanced_web/dest/
+
+
 ### Описание
 
 В проекте используются:
