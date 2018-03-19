@@ -50,19 +50,6 @@
     }
 }
 
-.title {
-    display: flex;
-    justify-content: center;
-    &__text {
-        text-transform: uppercase;
-        font-family: 'Bernier';
-        width: fit-content;
-        color: $text-dark;
-        font-size: 63px;
-        @include title-lines();
-    }
-}
-
 .skills {
     
     &__title {
@@ -84,6 +71,9 @@
             stroke-dashoffset: 3.14*40;
             transition: stroke-dashoffset 1s;
         }
+        &:not(:last-of-type) {
+            margin-bottom: 35px;
+        }
     }
 }
 
@@ -94,12 +84,6 @@
     &__icon {
         fill: none;
         stroke-width: 20;
-        // position: relative;
-
-        // &:hover > .circle__sector {
-        //     stroke-dashoffset: 3.14*40;
-        //     transition: stroke-dashoffset 1s;
-        // }
     }
 
     &__main {
@@ -118,9 +102,6 @@
     }
 
     &__text {
-        // text-anchor: middle;
-        // display: block;
-        // fill: $bg-green;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -133,3 +114,93 @@
         line-height: 14.7px;
     }
 }
+
+.map {
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+
+    height: 100%;
+    position: relative;
+    &__contacts {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__footer {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        transform: translateY(-100%);
+    }
+}
+
+.contacts {
+    background-color: $transp-white;
+    padding: 40px;
+    color: $text-dark;
+
+    &__subtitle {
+        padding-bottom: 40px;
+    }
+
+    &__icon {
+        fill: $bg-green;
+    }
+
+    &__item {
+        display: flex;
+        &:not(:last-of-type) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__icon {
+        margin-right: 10px;
+    }
+}
+
+.footer {
+    background-color: rgba(#373e42, .6);
+    color: $transp-white;
+    &__row {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 15px 30px;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid #6b7879;
+        }
+    }
+
+    &__col {
+        width: 40%;
+        display: flex;
+
+        &_right {
+            justify-content: flex-end;
+        }
+    }
+
+    &__menu-text, &__credits {
+        height: fit-content;
+        margin: auto 0;
+    }
+
+}
+
+.menu-text {
+    display: flex;
+    color: $white;
+    &__item {
+        &:not(:last-of-type) {
+            margin-right: 40px;
+        }
+    }
+}
+
+
+
+

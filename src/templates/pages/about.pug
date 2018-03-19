@@ -1,6 +1,8 @@
 extends ../base
 include ../blocks/socials
 include ../blocks/intro
+include ../blocks/title
+include ../blocks/subtitle
 block head
     title Обо мне
 block variables
@@ -11,8 +13,43 @@ block variables
             ['HTML5', 'CSS3', 'JavaScript & jQuery'],
             ['PHP', 'mySQL', 'Node.js & npm', 'Mongo.db'],
             ['Git', 'Gulp', 'Webpack']
-        ]
-
+        ];
+        var contactsList = [
+            {
+                icon: 'skype',
+                text: 'perftema'
+            },
+            {
+                icon: 'envelope',
+                text: 'kaloev.eltech@gmail.com'
+            },
+            {
+                icon: 'phone',
+                text: '+7 999 123 45 67'
+            },
+            {
+                icon: 'map_marker',
+                text: 'г. Санкт-Петербург, ул. профессора Попова'
+            }
+        ];
+        var menuSet = [
+            {
+                href: './works.html',
+                text: 'Мои работы'
+            },
+            {
+                href: './about.html',
+                text: 'Обо мне'
+            },
+            {
+                href: './blog.html',
+                text: 'Блог'
+            },
+            {
+                href: './index.html',
+                text: 'Авторизация'
+            }
+        ];
 
 block content
     section.section.hero
@@ -32,8 +69,7 @@ block content
     section.section.personal
         .personal__left-col
             .personal__avatar-area.avatar-area
-                .avatar-area__title.title 
-                    .title__text Обо мне
+                +title('Обо мне', 'avatar-area')
                 img(src='images/avatar.jpg').avatar-area__img
             .personal__text-area.text-area
                 h1 Кто я
@@ -55,3 +91,28 @@ block content
                                         circle.circle__sector(r="40", cx="60", cy="60")
                                         text(x="60" y="65").circle__text #{skillItem}
                                     .circle__text #{skillItem}
+    section.section.map
+        .map__contacts.contacts
+            +subtitle('Контакты', 'contacts')
+            ul.contacts__list
+                each item in contactsList
+                    li.contacts__item
+                        svg(width='25', height='25').contacts__icon
+                            use(xlink:href=`images/sprite.svg#${item.icon}`)
+                        .contacts__text #{item.text}
+        footer.footer.map__footer
+            .footer__row
+                .footer__col.footer__col_left
+                    .footer__menu-text
+                        ul.menu-text
+                            each item in menuSet
+                                li.menu-text__item
+                                    a.menu-text__btn(href=`${item.href}`) #{item.text}           
+                .footer__col.footer__col_right
+                    +socials('footer')
+            .footer__row
+                .footer__col.footer__col_left
+                    .footer__about-me Я веб разработчик из Санкт-Петербурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+                .footer__col.footer__col_right
+                    .footer__credits © Артем Калоев | Создано с любовью в Loftscool | 2018
+

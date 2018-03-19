@@ -1,4 +1,4 @@
-mixin socials(iconClassName)
+mixin socials(className)
     -
             var socialList = [
                 {
@@ -17,7 +17,10 @@ mixin socials(iconClassName)
 
     ul.socials
         each item in socialList
-            li.socials__item
+            li.socials__item(class=`socials__item_${className}`)
                 a(href=`${item.href}`).socials__link.social
-                    svg.social__icon(width='25', height='25', class=`social__icon_${iconClassName}`)
-                        use(xlink:href=`images/sprite.svg#${item.text}`)
+                    svg.social__icon(width='25', height='25', class=`social__icon_${className}`)
+                        if (className === 'footer')
+                            use(xlink:href=`images/sprite.svg#${item.text}_round`)
+                        else 
+                            use(xlink:href=`images/sprite.svg#${item.text}`)

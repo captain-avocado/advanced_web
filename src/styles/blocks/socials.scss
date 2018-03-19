@@ -6,5 +6,8 @@
         &:not(:last-of-type) {
             margin-right: 30px;
         }
+        &_footer:not(:last-of-type){
+            margin-right: 10px;
+        }
     }
 }

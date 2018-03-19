@@ -1,0 +1,15 @@
+.subtitle {
+    display: flex;
+    justify-content: center;
+    &__text {
+        text-transform: uppercase;
+        font-family: 'Bernier';
+        width: fit-content;
+        color: $text-dark;
+        // font-size: 63px;
+        @include title-lines();
+        // &_contacts {
+            font-size: 35px;
+        // }
+    }
+}
