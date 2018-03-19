@@ -1,5 +1,11 @@
 extends ../base
+include ../blocks/footer
+include ../blocks/hero
+include ../blocks/title
 block head
     title Работы
+block variables
 block content
-    h1 HI from WORKS
+    +hero
+    section.section.works
+        +title('Работы', 'works')

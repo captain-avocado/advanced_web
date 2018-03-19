@@ -18,9 +18,9 @@
 }
 
 .avatar-area {
-    &__title {
-        margin-bottom: 70px;
-    }
+    // &__title {
+    //     margin-top: 70px;
+    // }
     &__img {
         max-width: 100%;
     }
@@ -158,46 +158,6 @@
 
     &__icon {
         margin-right: 10px;
-    }
-}
-
-.footer {
-    background-color: rgba(#373e42, .6);
-    color: $transp-white;
-    &__row {
-        display: flex;
-        justify-content: space-between;
-
-        padding: 15px 30px;
-
-        &:not(:last-of-type) {
-            border-bottom: 1px solid #6b7879;
-        }
-    }
-
-    &__col {
-        width: 40%;
-        display: flex;
-
-        &_right {
-            justify-content: flex-end;
-        }
-    }
-
-    &__menu-text, &__credits {
-        height: fit-content;
-        margin: auto 0;
-    }
-
-}
-
-.menu-text {
-    display: flex;
-    color: $white;
-    &__item {
-        &:not(:last-of-type) {
-            margin-right: 40px;
-        }
     }
 }
 

@@ -6,10 +6,11 @@
         font-family: 'Bernier';
         width: fit-content;
         color: $text-dark;
-        // font-size: 63px;
+        font-size: 35px;
         @include title-lines();
-        // &_contacts {
-            font-size: 35px;
-        // }
+        &_contacts {
+            margin-top: 0;
+        }
+
     }
 }
