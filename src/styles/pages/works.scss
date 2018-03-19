@@ -1,0 +1,32 @@
+// .works {
+
+// }
+
+.slider {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &__descr {
+        width: 50%;
+        height: 100%;
+        background-color: purple;
+    }
+    &__preview {
+        height: 50%;
+        width: 50%;
+        background-color: aqua;
+    }
+    &__controls {
+        height: 50%;
+        width: 50%;
+        background-color: crimson;
+    }
+}
+// .slider__descr {
+//     width: 50%;
+// }
+
+// .slider__preview, {
+//     height: 50%;
+// }

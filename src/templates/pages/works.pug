@@ -2,6 +2,7 @@ extends ../base
 include ../blocks/footer
 include ../blocks/hero
 include ../blocks/title
+include ../blocks/subtitle
 block head
     title Работы
 block variables
@@ -9,3 +10,15 @@ block content
     +hero
     section.section.works
         +title('Работы', 'works')
+        .works__slider.slider
+            .slider__descr.descr
+                +subtitle('Сайт школы онлайн образования', 'descr')
+                .descr__tech
+                .descr__show
+                    .btn-show
+                        svg.btn-show__icon
+                        .btn-show__text Посмотреть сайт
+            .slider__preview
+            .slider__controls
+                .slider__prev
+                .works__next
