@@ -1,4 +1,4 @@
-mixin footer
+mixin footer(className)
     -
         var menuSet = [
             {
@@ -19,7 +19,7 @@ mixin footer
             }
         ];
 
-    footer.footer.map__footer
+    footer(class=`footer ${className}__footer`)
         .footer__row
             .footer__col.footer__col_left
                 .footer__menu-text

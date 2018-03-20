@@ -8,9 +8,9 @@
         color: $text-dark;
         font-size: 35px;
         @include title-lines();
+        margin: 35px 0;
         &_contacts {
-            margin-top: 0;
+            margin: 0 0;
         }
-
     }
 }

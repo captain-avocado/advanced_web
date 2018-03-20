@@ -1,0 +1,12 @@
+.arrow {
+    height: 20px;
+    width: 25px;
+    display: block;
+    &__icon {
+        fill: $transp-white;
+        &:hover {
+            transition: .3s;
+            fill: $white;
+        }
+    }
+}

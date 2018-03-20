@@ -36,12 +36,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    &__subtitle {
-        margin-bottom: 35px;
-    }
     &__tech {
         text-transform: uppercase;
         padding: 20px 0;
+        margin-bottom: 35px;
         text-align: center;
         border-bottom: 1px solid $bg-green;
         border-top: 1px solid $bg-green;
@@ -103,8 +101,42 @@
 }
 
 .talk {
-    background-image: url('images/bg-works.jpg');
+    background-image: url('../images/bg-works.jpg');
     background-size: cover;
+    min-height: 620px;
+    position: relative;
+    &__top-area {
+        height: 100%;
+        min-height: 620px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__bottom-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // height: 100%;
+        flex-direction: column;
+        min-height: 620px;
+        height: 100vh;
+        position: relative;
+    }
+    &__arrow {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+    &__footer {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        transform: translateY(-100%);
+    }
+
 }
 
 .container {
@@ -114,6 +146,12 @@
 .quotes {
     display: flex;
     color: $text-dark;
+    &__item {
+        flex: 1;
+        &:not(:last-of-type) {
+            margin-right: 20px;
+        }
+    }
     &__symb {
         font-family: 'FontAwesome';
         color: #d5d7d8;
@@ -143,3 +181,39 @@
         transform: translate(-50%, -50%);
     }
 }
+
+.form {
+    width: 33% + 15%;
+    // max-height: 440px;
+    border-radius: 4px; 
+    //FIXME
+    background-color: rgba(#fcfcfc, .7);
+    //END FIXME
+    &__input-area {
+        margin: 5%;
+    }
+    &__input, &__text-area {
+        padding: 20px;
+        font-size: 16px;
+        outline: none;
+        border-radius: 5px;
+        border: 0;
+        width: 100%;
+    }
+
+    &__text-area {
+        min-height: 140px;
+        resize: none;
+    }
+
+    &__input {
+        margin-bottom: 15px;
+    }
+
+}
+
+// .button {
+//     &_form {
+
+//     }
+// }

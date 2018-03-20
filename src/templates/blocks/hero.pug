@@ -2,6 +2,7 @@ mixin hero(className)
 
     include ../blocks/socials
     include ../blocks/intro
+    include ../blocks/arrow
 
     section.section.hero
             header.hero__header.header
@@ -11,9 +12,7 @@ mixin hero(className)
                     .menu__icon
             .hero__intro
                 +intro('hero')
-            a(href='#').hero__arrow.arrow
-                svg(width='25', height='20').arrow__icon
-                    use(xlink:href='images/sprite.svg#arrow')
+            +arrow('hero')
             svg(class=`triangles_${className}`, viewBox='0 0 1200 130', preserveAspectRatio='none').hero__triangles.triangles
                     polygon(points='0,0 600,110 600,130 0,130').triangles__left
                     polygon(points='600,110 1200,0 1200,130 600,130').triangles__right

@@ -1,0 +1,26 @@
+.button {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: $white;
+    font-size: 16px;
+    &_works, &_submit {
+        border-radius: 0 0 0 4px;
+    }
+    &_blog, &_reset {
+        border-radius: 0 0 4px 0;
+    }
+    padding: 15px 25px;
+    background-color: $bg-green;
+    &:hover {
+        transition: .3s;
+        background-color: rgba($bg-green-dark, 0.7);
+    }
+    &_submit, &_reset {
+        background-color: $bg-green-dark;
+        &:hover {
+            background-color: $bg-green;
+        }
+    }
+}
