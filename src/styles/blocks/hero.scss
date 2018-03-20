@@ -88,4 +88,9 @@
             fill: #faf8f0;
         }
     }
+    &_blog {
+        .triangles__left, .triangles__right {
+            fill: $white;
+        }
+    }
 }

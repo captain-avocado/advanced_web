@@ -15,6 +15,9 @@
     &__text {
         display: flex;
         flex-direction: column;
+        &_blog {
+            color: $white;
+        }
     }
 
     &__name {
@@ -36,4 +39,6 @@
             color: rgba(white, .85);
         }
     }
+
+    
 }

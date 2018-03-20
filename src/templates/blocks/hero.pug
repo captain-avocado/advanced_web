@@ -3,6 +3,7 @@ mixin hero(className)
     include ../blocks/socials
     include ../blocks/intro
     include ../blocks/arrow
+    include ../blocks/title
 
     section.section.hero
             header.hero__header.header
@@ -11,7 +12,14 @@ mixin hero(className)
                 a(href='#').header__menu.menu
                     .menu__icon
             .hero__intro
-                +intro('hero')
+                if (className === 'blog')
+                    .intro
+                        img(src='images/avatar.jpg').intro__avatar
+                        .intro__text_blog
+                            +title('Блог', 'intro') 
+                            .intro__papers Статьи, котоыре я написал
+                else
+                    +intro('hero')
             +arrow('hero')
             svg(class=`triangles_${className}`, viewBox='0 0 1200 130', preserveAspectRatio='none').hero__triangles.triangles
                     polygon(points='0,0 600,110 600,130 0,130').triangles__left

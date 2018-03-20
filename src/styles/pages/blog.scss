@@ -1,0 +1,70 @@
+.blog {
+    display: flex;
+    padding-top: 70px;
+    &__paper-list {
+        // flex: 1;
+        padding-left: 40px;
+        width: 25%;
+    }
+    &__papers {
+        // flex: 2;
+
+        width: 75%;
+        padding-left: 90px;
+    }
+}
+
+.paper-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    &__item {
+        &:not(:last-of-type) {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.paper-name {
+    color: $text-dark;
+    width: fit-content;
+    &__link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-right: 20px;
+    }
+    border-right: 3px solid transparent;
+    &:hover {
+        color: $bg-green;
+        border-right: 3px solid $bg-green;
+    }
+}
+
+.papers {
+    padding-right: 110px;
+    &__item {
+        padding-bottom: 70px;
+        &:not(:last-of-type) {
+            border-bottom: 5px solid #f1f1f2;
+        }
+        &:not(:first-of-type) {
+            padding-top: 70px;
+        }
+    }
+}
+
+.paper {
+    &__title {
+        font-family: 'Bernier';
+        font-size: 40px;
+        color: $text-dark;
+        margin-bottom: 30px;
+    }
+    &__date {
+        color: $bg-green;
+        margin-bottom: 30px;
+    }
+
+}
