@@ -35,10 +35,13 @@
         height: 100%;
         padding-right: 20px;
     }
+
+    transition: border-right .3s;
     border-right: 3px solid transparent;
     &:hover {
         color: $bg-green;
         border-right: 3px solid $bg-green;
+        transition: border-right .5s;
     }
 }
 
