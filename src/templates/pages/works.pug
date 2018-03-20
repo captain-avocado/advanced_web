@@ -7,18 +7,66 @@ block head
     title Работы
 block variables
 block content
-    +hero
+    +hero('works')
     section.section.works
         +title('Работы', 'works')
         .works__slider.slider
-            .slider__descr.descr
-                +subtitle('Сайт школы онлайн образования', 'descr')
-                .descr__tech
-                .descr__show
-                    .btn-show
-                        svg.btn-show__icon
-                        .btn-show__text Посмотреть сайт
+            .slider__descr
+                .descr
+                    +subtitle('Сайт школы онлайн образования', 'descr')
+                    .descr__tech html, css, javascript
+                    .descr__show
+                        a(href='#').btn-show
+                            svg(width='20', height='20').btn-show__icon
+                                use(xlink:href='images/sprite.svg#link')
+                            .btn-show__text Посмотреть сайт
             .slider__preview
-            .slider__controls
-                .slider__prev
-                .works__next
+            ul.slider__controls.controls
+                li.controls__item.controls__item_prev
+                    a(href='#').controls__link
+                        svg(width='45', height='30').controls__icon.controls__icon_prev
+                            use(xlink:href='images/sprite.svg#arrow')
+                li.controls__item.controls__item_next
+                    a(href='#').controls__link    
+                        svg(width='45', height='30').controls__icon.controls__icon_next
+                            use(xlink:href='images/sprite.svg#arrow')
+    section.section.talk
+        .container.container_talk
+            +title('Что обо мне говорят', 'talk')
+            ul.talk__quotes.quotes
+                li.quotes__item
+                    .quotes__symb 
+                        i.fas.fa-quote-left.fa-2x
+                    .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .quotes__person.person
+                        .person__avatar
+                            img(src='images/kovaldn.jpg').person__img
+                        .person__text
+                            .person__name Ковальчук Дмитрий
+                            .person__position основатель Loftschool
+                li.quotes__item
+                    .quotes__symb 
+                        i.fas.fa-quote-left.fa-2x
+                    .quotes__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+                    .quotes__person.person
+                        .person__avatar
+                            img(src='images/vova.jpg').person__img
+                        .person__text
+                            .person__name Сабанцев Владимир
+                            .person__position преподаватель
+            form.form
+                .form__input-area
+                    +subtitle('Связаться со мной', 'form')
+                    input.form__input.form__input_name(type="text", placeholder='Имя')
+                    input.form__input.form__input_email(type="text", placeholder='Email')
+                    textarea(name="textarea", cols="30", rows="10", placeholder='Ваше сообщение').form__text-area
+                .form__btn-area
+                    ul.buttons
+                        li.buttons__item
+                            input(type="submit", value='Отправить').button.button_submit
+                        li.buttons__item
+                            input(type="reset", value='Очистить').button.button_reset
+
+
+
+                

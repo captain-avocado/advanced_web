@@ -40,7 +40,7 @@
         <svg class="arrow__icon" width="25" height="20">
           <use xlink:href="images/sprite.svg#arrow"></use>
         </svg></a>
-      <svg class="hero__triangles triangles" viewBox="0 0 1200 130" preserveAspectRatio="none">
+      <svg class="triangles_works hero__triangles triangles" viewBox="0 0 1200 130" preserveAspectRatio="none">
         <polygon class="triangles__left" points="0,0 600,110 600,130 0,130"></polygon>
         <polygon class="triangles__right" points="600,110 1200,0 1200,130 600,130"></polygon>
       </svg>
@@ -50,23 +50,81 @@
         <div class="title__text title__text_works">Работы</div>
       </div>
       <div class="works__slider slider">
-        <div class="slider__descr descr">
-          <div class="subtitle descr__subtitle">
-            <div class="subtitle__text subtitle__text_descr">Сайт школы онлайн образования</div>
-          </div>
-          <div class="descr__tech"></div>
-          <div class="descr__show">
-            <div class="btn-show">
-              <svg class="btn-show__icon"></svg>
-              <div class="btn-show__text">Посмотреть сайт</div>
+        <div class="slider__descr">
+          <div class="descr">
+            <div class="subtitle descr__subtitle">
+              <div class="subtitle__text subtitle__text_descr">Сайт школы онлайн образования</div>
             </div>
+            <div class="descr__tech">html, css, javascript</div>
+            <div class="descr__show"><a class="btn-show" href="#">
+                <svg class="btn-show__icon" width="20" height="20">
+                  <use xlink:href="images/sprite.svg#link"></use>
+                </svg>
+                <div class="btn-show__text">Посмотреть сайт</div></a></div>
           </div>
         </div>
         <div class="slider__preview"></div>
-        <div class="slider__controls">
-          <div class="slider__prev"></div>
-          <div class="works__next"></div>
+        <ul class="slider__controls controls">
+          <li class="controls__item controls__item_prev"><a class="controls__link" href="#">
+              <svg class="controls__icon controls__icon_prev" width="45" height="30">
+                <use xlink:href="images/sprite.svg#arrow"></use>
+              </svg></a></li>
+          <li class="controls__item controls__item_next"><a class="controls__link" href="#">   
+              <svg class="controls__icon controls__icon_next" width="45" height="30">
+                <use xlink:href="images/sprite.svg#arrow"></use>
+              </svg></a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="section talk">
+      <div class="container container_talk">
+        <div class="title talk__title">
+          <div class="title__text title__text_talk">Что обо мне говорят</div>
         </div>
+        <ul class="talk__quotes quotes">
+          <li class="quotes__item">
+            <div class="quotes__symb"> <i class="fas fa-quote-left fa-2x"></i></div>
+            <div class="quotes__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
+            <div class="quotes__person person">
+              <div class="person__avatar"><img class="person__img" src="images/kovaldn.jpg"></div>
+              <div class="person__text">
+                <div class="person__name">Ковальчук Дмитрий</div>
+                <div class="person__position">основатель Loftschool</div>
+              </div>
+            </div>
+          </li>
+          <li class="quotes__item">
+            <div class="quotes__symb"> <i class="fas fa-quote-left fa-2x"></i></div>
+            <div class="quotes__text">Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!</div>
+            <div class="quotes__person person">
+              <div class="person__avatar"><img class="person__img" src="images/vova.jpg"></div>
+              <div class="person__text">
+                <div class="person__name">Сабанцев Владимир</div>
+                <div class="person__position">преподаватель</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <form class="form">
+          <div class="form__input-area">
+            <div class="subtitle form__subtitle">
+              <div class="subtitle__text subtitle__text_form">Связаться со мной</div>
+            </div>
+            <input class="form__input form__input_name" type="text" placeholder="Имя">
+            <input class="form__input form__input_email" type="text" placeholder="Email">
+            <textarea class="form__text-area" name="textarea" cols="30" rows="10" placeholder="Ваше сообщение"></textarea>
+          </div>
+          <div class="form__btn-area">
+            <ul class="buttons">
+              <li class="buttons__item">
+                <input class="button button_submit" type="submit" value="Отправить">
+              </li>
+              <li class="buttons__item">
+                <input class="button button_reset" type="reset" value="Очистить">
+              </li>
+            </ul>
+          </div>
+        </form>
       </div>
     </section>
   </body>

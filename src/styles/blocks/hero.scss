@@ -94,4 +94,10 @@
     &__right {
         fill: $bg-beige;
     }
+
+    &_works {
+        .triangles__left, .triangles__right {
+            fill: #faf8f0;
+        }
+    }
 }
