@@ -1,3 +1,5 @@
 mixin title(text, className)
     .title(class=`${className}__title`)
         .title__text(class=`title__text_${className}`)= text
+        svg(class=`title__svg title__svg_${className}`)
+            use(xlink:href=`images/sprite.svg#${className}_header`)

@@ -6,6 +6,7 @@
     align-items: center;
     &__avatar {
         border-radius: 50%;
+        z-index: 20;
         
         //FIX
         max-width: 40%;
@@ -15,6 +16,7 @@
     &__text {
         display: flex;
         flex-direction: column;
+        z-index: 20;
         &_blog {
             color: $white;
         }
@@ -39,6 +41,14 @@
             color: rgba(white, .85);
         }
     }
-
+    position: relative;
+    &__svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: scale(4) translate(-12.5%, -12.5%);
+        z-index: 5;
+        fill: rgba($transp-white, .15);
+    }
     
 }

@@ -1,6 +1,7 @@
 .title {
     display: flex;
     justify-content: center;
+    position: relative;
     &__text {
         text-transform: uppercase;
         font-family: 'Bernier';
@@ -9,13 +10,39 @@
         font-size: 63px;
         @include title-lines();
         margin: 70px 0;
+        z-index: 20;
+
         &_avatar-area {
-            margin-top: 0;
+            margin: 0;
         }
         &_intro {
             color: $white;
             margin: 0;
         }
+
+    }
+
+    &__svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &_works {
+            fill: #f0eee7;
+            transform: scale(1.5) translate(-33.33%, -33.33%);
+        }
+        &_intro {
+            fill: rgba($transp-white, .15);
+            transform: scale(1.5) translate(-33.33%, -33.33%);
+        }
+        &_avatar-area {
+            fill: #e6e5e0;
+        }
+        &_talk {
+            transform: scale(1.5) translate(-33%, -33%);
+            fill: #ebecec;
+        }
+
     }
     
     // &_talk {

@@ -18,9 +18,9 @@
 }
 
 .avatar-area {
-    // &__title {
-    //     margin-top: 70px;
-    // }
+    &__title {
+        margin-bottom: 70px;
+    }
     &__img {
         max-width: 100%;
     }

@@ -4,3 +4,6 @@ mixin intro(className)
         .intro__text
             .intro__name(class=`intro__name_${className}`) Артем Калоев 
             .intro__site(class=`intro__site_${className}`) Личный сайт веб-разработчика
+        if (className !== 'welcome')
+            svg.intro__svg
+                use(xlink:href='images/sprite.svg#portfolio_header')
