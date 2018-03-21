@@ -1,4 +1,4 @@
-@mixin title-lines() {
+@mixin title-lines($type) {
     position: relative;
     &:before {
         content: '';
@@ -12,7 +12,10 @@
         position: absolute;
         top: 50%;
         left: 0;
-        transform: translate(-200%, -50%);
+        @if $type == 'title'
+            { transform: translate(-200%, -50%); }
+        @if $type == 'subtitle'
+            { transform: translate(-150%, -50%); }
     }
     &:after {
         content: '';
@@ -26,7 +29,10 @@
         position: absolute;
         top: 50%;
         left: 100%;
-        transform: translate(100%, -50%);
+        @if $type == 'title'
+            { transform: translate(100%, -50%); }
+        @if $type == 'subtitle'
+            { transform: translate(50%, -50%); }
     }
     &:hover {
         &:after, &:before{

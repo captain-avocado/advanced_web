@@ -46,7 +46,7 @@
         text-align: center;
         margin-bottom: 40px;
         margin-top: 40px;
-        @include title-lines();
+        @include title-lines('subtitle');
     }
     
     &_left h1:first-of-type {
