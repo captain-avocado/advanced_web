@@ -5,7 +5,7 @@ mixin hero(className)
     include ../blocks/arrow
     include ../blocks/title
 
-    section.section.hero
+    section.section.hero(class=`hero_${className}`)
             header.hero__header.header
                 .header__socials.socials_about
                     +socials('hero')
