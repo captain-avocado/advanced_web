@@ -15,6 +15,10 @@
         padding: 0 2% 4% 2%;
         background-color: $bg-beige;
     }
+
+    &__skills {
+        margin-top: 65px;
+    }
 }
 
 .avatar-area {
@@ -64,7 +68,7 @@
 }
 .skills {
     &__list {
-    display: flex;
+        display: flex;
     }
     &__item {
         &:hover .circle__sector {
@@ -119,13 +123,17 @@
     background-image: url('../images/bg.jpg');
     background-size: cover;
 
-    height: 100%;
+    height: 100vh;
+    min-height: 980px;
     position: relative;
     &__contacts {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        // max-width: 33%;
+        // min-width: 30%;
+        width: 30%;
     }
 
     &__footer {
@@ -138,11 +146,11 @@
 
 .contacts {
     background-color: $transp-white;
-    padding: 40px;
+    padding: 0 40px 30px 40px 30px;
     color: $text-dark;
 
     &__subtitle {
-        padding-bottom: 40px;
+        // padding-bottom: 40px;
     }
 
     &__icon {
@@ -152,7 +160,7 @@
     &__item {
         display: flex;
         &:not(:last-of-type) {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
     }
 

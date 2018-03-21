@@ -4,6 +4,7 @@
     width: 100%;
 
     &__icon {
+        position: relative;
         &_welcome {
             fill: $bg-green;
             &:hover {
@@ -23,4 +24,12 @@
             height: 36px;
         }
     }
+    // &__circle {
+    //     fill: none;
+    //     stroke: $transp-white;
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-100%, -0%);
+    // }
 }

@@ -22,5 +22,6 @@ mixin socials(className)
                     svg.social__icon(width='25', height='25', class=`social__icon_${className}`)
                         if (className === 'footer')
                             use(xlink:href=`images/sprite.svg#${item.text}_round`)
+                            //- circle(cx='18', xy='18', r='18').social__circle
                         else 
                             use(xlink:href=`images/sprite.svg#${item.text}`)
