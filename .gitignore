@@ -87,3 +87,5 @@ typings/
 
 # package-managers
 *.lock
+yarn.lock
+package-lock.json
