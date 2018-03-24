@@ -52,6 +52,10 @@ function styles() {
         browsers: ["last 2 versions"],
         cascade: false
     }))
+    .pipe($gp.cssUnit({
+        type: 'px-to-rem',
+        rootSize: 16
+    }))
     .pipe($gp.cssnano())
     .pipe($gp.rename({  suffix: '.min'  }))
     .pipe($gp.sourcemaps.write('/'))

@@ -17,6 +17,11 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 350px;
+        @include phones {
+            width: 90%;
+            height: 75%;
+        }
     }
     &__credits {
         color: rgba(white, .7);
@@ -30,7 +35,8 @@
     flex-direction: column;
     background-color:rgba( #fff, 0.7);
     border-radius: 4px;
-
+    height: 100%;
+    
     &__socials {
         margin-top: 25px;
     }
