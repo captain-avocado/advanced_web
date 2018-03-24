@@ -4,6 +4,9 @@
 
     &_blog {
         min-height: 400px;
+        @include phones {
+            min-height: 568px;
+        }
     }
 
     min-height: 620px;

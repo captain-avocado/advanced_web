@@ -10,14 +10,34 @@
         &:not(:last-of-type) {
             border-bottom: 1px solid #6b7879;
         }
+
+        @include tablets {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-right: 0;
+            padding-left: 0;
+        }
     }
 
     &__col {
         width: 40%;
         display: flex;
-
+        @include tablets {
+            text-align: center;
+        }
         &_right {
             justify-content: flex-end;
+        }
+
+        @include tablets {
+            width: 90%;
+            justify-content: center;
+        }
+        &:not(:last-of-type) {
+            @include tablets {
+                margin-bottom: 20px;
+            }
         }
     }
 
@@ -34,6 +54,9 @@
     &__item {
         &:not(:last-of-type) {
             margin-right: 40px;
+            @include phones {
+                margin-right: 10px;
+            }
         }
     }
 }
