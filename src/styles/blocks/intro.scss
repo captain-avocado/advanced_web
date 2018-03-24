@@ -9,9 +9,13 @@
         z-index: 20;
         
         margin-bottom: 10px;
-
+        max-width: 150px;
+        
         //FIX
-        max-width: 50%;
+        // &_welcome {
+        //     max-width: 50%;
+        // }
+        
         // max-width: 150px;
         //END FIX
     }

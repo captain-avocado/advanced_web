@@ -1,6 +1,6 @@
 mixin intro(className)
     .intro
-        img(src='images/avatar.jpg').intro__avatar
+        img(src='images/avatar.jpg', class=`intro__avatar intro__avatar_${className}`)
         .intro__text
             .intro__name(class=`intro__name_${className}`) Артем Калоев 
             .intro__site(class=`intro__site_${className}`) Личный сайт веб-разработчика

@@ -12,8 +12,8 @@
         align-self: flex-end;
         margin: 20px;
         @include phones {
-            align-self: center;
-            margin: 20px 0;
+            // align-self: center
+            margin: auto;
         }
     }
     &__welcome {
@@ -25,6 +25,9 @@
         @include phones {
             width: 90%;
             height: 75%;
+            position: static;
+            transform: translate(0, 0);
+            margin-bottom: auto;
         }
     }
     &__credits {
