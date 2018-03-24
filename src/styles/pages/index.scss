@@ -24,15 +24,18 @@
         width: 380px;
         @include phones {
             width: 90%;
-            height: 75%;
+            height: 65%;
             position: static;
             transform: translate(0, 0);
-            margin-bottom: auto;
+            margin: auto;
         }
     }
     &__credits {
-        color: rgba(white, .7);
         margin-bottom: 3%;
+        @include phones {
+            margin: auto;
+            width: 70%;
+        }
     }
 }
 

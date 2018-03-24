@@ -1,0 +1,20 @@
+.credits {
+    color: rgba(white, .7);
+    &__author {
+        @include phones {
+            display: block;
+        }
+        &:after {
+            content: '|';
+            display: inline-block;
+            margin: 0 4px;
+            @include phones {
+                display: none;
+            }
+        }
+    }
+    @include phones {
+        text-align: center;
+    }
+
+}

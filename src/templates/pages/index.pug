@@ -1,6 +1,7 @@
 extends ../base
 include ../blocks/socials
 include ../blocks/intro
+include ../blocks/credits
 block head
     title Авторизация
 block variables
@@ -40,4 +41,4 @@ block content
                         each item in buttonsList
                             li.buttons__item
                                 a(href=`${item.href}`, class=`button button_${item.spec}`) #{item.text}
-        .main__credits © Артем Калоев | Создано с любовью в Loftscool | 2018
+        +credits('main')
