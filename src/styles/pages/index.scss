@@ -11,13 +11,17 @@
     &__auth {
         align-self: flex-end;
         margin: 20px;
+        @include phones {
+            align-self: center;
+            margin: 20px 0;
+        }
     }
     &__welcome {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 350px;
+        width: 380px;
         @include phones {
             width: 90%;
             height: 75%;
@@ -36,7 +40,11 @@
     background-color:rgba( #fff, 0.7);
     border-radius: 4px;
     height: 100%;
-    
+
+    // &__about {
+    //     margin-bottom: 30px;
+    // }
+
     &__socials {
         margin-top: 25px;
     }
@@ -45,6 +53,11 @@
         display: flex;
         flex-direction: column;
         padding: 35px 60px;
+        
+        @include phones {
+            height: 100%;
+            justify-content: center;
+        }
     }
 
     &__avatar {
@@ -54,6 +67,9 @@
         max-width: 40%;
         max-width: 150px;
         //END FIX
+        @include phones {
+            max-width: 70%;
+        }
     }
 
     &__text {
