@@ -1,30 +1,59 @@
 .personal {
-    // height: 100%;
-    // min-w: 620px;
     min-height: 835px;
     
     display: flex;
-    
+    @include tablets {
+        flex-direction: column;
+    }
     &__left-col {
         width: 50%;
         padding: 0 8% 4% 8%;
         background-color: $bg-white;
+        @include tablets {
+            width: 100%;
+            padding: 0 20% 10% 20%;
+        }
+        @include phones {
+            padding: 0;
+        }
     }
 
     &__right-col {
         width: 50%;
         padding: 0 2% 4% 2%;
         background-color: $bg-beige;
+        @include tablets {
+            width: 100%;
+            padding: 10% 20% 10% 20%;
+        }
+        @include phones {
+            padding: 10% 0;
+        }
     }
+
+    // &__left-col, &__right-col {
+    //     @include tablets {
+    //         width: 100%;
+    //         padding: 0 20% 10% 20%;
+    //     }
+    // }
 
     &__skills {
         margin-top: 65px;
+        @include phones {
+            padding: 0 5%;
+        }
+    }
+    &__text-area {
+        @include phones {
+            padding: 0 5%;
+        }
     }
 }
 
 .avatar-area {
     &__title {
-        margin-bottom: 70px;
+        margin: 35px 0;
     }
     &__img {
         max-width: 100%;
@@ -40,7 +69,7 @@
 
     h1 {
         width: fit-content;
-        max-width: 60%;
+        max-width: 65%;
         text-transform: uppercase;
         font-family: 'Bernier';
         font-size: 35px;
@@ -48,6 +77,9 @@
         margin-bottom: 40px;
         margin-top: 40px;
         @include title-lines('subtitle');
+        @include phones {
+            max-width: 75%;
+        }
     }
     
     &_left h1:first-of-type {
@@ -64,12 +96,21 @@
         &::first-letter {
             text-transform: uppercase;
         }
+        @include tablets {
+            text-align: center;
+        }
     }
 
 }
 .skills {
     &__list {
         display: flex;
+        @include tablets {
+            justify-content: center;
+        }
+        @include phones {
+            flex-wrap: wrap;
+        }
     }
     &__item {
         &:hover .circle__sector {
@@ -84,8 +125,21 @@
 
 .circle {
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 120;
+    height: 120;
+
+    &:not(:last-of-type) {
+        @include tablets {
+            margin-right: 15px;
+        }
+    }
+
+    &:nth-of-type(2n) {
+        @include phones {
+            margin-right: 0;
+        }
+    }
+
     &__icon {
         fill: none;
         stroke-width: 20;
@@ -129,9 +183,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include phones {
+        align-items: flex-start;
+    }
     &__contacts {    
         width: 380px;
         height: fit-content;
+        @include phones {
+            width: 100%;
+        }
     }
 
     &__footer {
