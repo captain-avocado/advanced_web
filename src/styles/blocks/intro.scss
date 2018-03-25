@@ -10,14 +10,6 @@
         
         margin-bottom: 10px;
         max-width: 150px;
-        
-        //FIX
-        // &_welcome {
-        //     max-width: 50%;
-        // }
-        
-        // max-width: 150px;
-        //END FIX
     }
     &__text {
         display: flex;
@@ -56,6 +48,9 @@
         transform: scale(4) translate(-12.5%, -12.5%);
         z-index: 5;
         fill: rgba($transp-white, .15);
+        @include phones {
+            display: none;
+        }
     }
     
 }

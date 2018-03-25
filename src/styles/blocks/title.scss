@@ -12,6 +12,10 @@
         margin: 70px 0;
         z-index: 20;
 
+        @include phones {
+            font-size: 48px;
+        }
+
         &_avatar-area {
             margin: 0;
         }
@@ -20,7 +24,7 @@
             margin: 0;
         }
         &_talk {
-            width: 60%;
+            width: 65%;
             text-align: center;
             line-height: 1.05;
         }
@@ -34,6 +38,9 @@
         &_works {
             fill: #f0eee7;
             transform: scale(1.5) translate(-33.33%, -33.33%);
+            @include phones {
+                transform: scale(1) translate(-50%, -50%);
+            }
         }
         &_intro {
             fill: rgba($transp-white, .15);
@@ -45,11 +52,10 @@
         &_talk {
             transform: scale(1.5) translate(-33%, -33%);
             fill: #ebecec;
+            @include phones {
+                transform: scale(1) translate(-50%, -50%);
+            }
         }
 
     }
-    
-    // &_talk {
-    //     background-image: url('images/sprite.svg#')
-    // }
 }

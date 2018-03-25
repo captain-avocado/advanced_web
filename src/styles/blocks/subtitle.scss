@@ -5,15 +5,23 @@
         text-transform: uppercase;
         font-family: 'Bernier';
         width: fit-content;
+        max-width: 75%;
+        text-align: center;
         color: $text-dark;
         font-size: 35px;
         @include title-lines('subtitle');
         margin: 35px 0;
+        @include phones {
+            font-size: 28px;
+        }
         &_contacts {
             margin: 30px 0;
         }
         &_form {
             margin: 10px 0 20px 0;
+        }
+        &_descr {
+            margin-bottom: 15px;
         }
     }
 }
