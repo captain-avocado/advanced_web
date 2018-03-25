@@ -126,13 +126,12 @@
 }
 
 .talk {
-    background-image: url('../images/bg-works.jpg');
+    background: url('../images/bg-works.jpg') center 150px no-repeat;
     background-size: cover;
     min-height: 1240px;
     position: relative;
     
     &__top-area {
-        // height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;

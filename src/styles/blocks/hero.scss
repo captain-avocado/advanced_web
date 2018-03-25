@@ -31,7 +31,7 @@
 
     &__triangles {
         position: absolute;
-        top: 100%;
+        top: 101%;
         left: 0;
         transform: translateY(-100%);
     }
@@ -85,7 +85,6 @@
 }
 
 .triangles {
-    stroke: #fff;
     &__left {
         fill: $bg-white;
     }
