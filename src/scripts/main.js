@@ -1,5 +1,12 @@
 import module from './modules/module';
 import fontAwesome from './modules/fontawesome-all';
-console.log($);
-module();
-console.log('hello from non-module');
+import flipper from './modules/flipper';
+
+window.onload = init;
+
+function init(){
+    flipper();
+}
+// console.log($);
+// module();
+// console.log('hello from non-module');

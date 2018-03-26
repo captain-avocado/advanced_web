@@ -2,9 +2,18 @@
     display: flex;
     border-radius: 0 0 4px 4px;
     &__item {
-        flex: auto; 
+        flex: auto;
+        &_login {
+            flex: 1;
+        } 
         &:not(:last-of-type) {
             border-right: 2px solid #73cac2;
+        }
+        &:first-of-type {
+            border-radius: 0 0 0 4px;
+        }
+        &:last-of-type {
+            border-radius: 0 0 4px 0;
         }
     }
 }

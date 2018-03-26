@@ -12,39 +12,91 @@
     <section class="section main">
       <div class="main__auth"><a class="btn-auth" href="#">Авторизоваться</a></div>
       <div class="main__welcome">
-        <div class="welcome">
-          <div class="welcome__info">
-            <div class="welcome__about">
-              <div class="intro"><img class="intro__avatar intro__avatar_welcome" src="images/avatar.jpg"/>
-                <div class="intro__text">
-                  <div class="intro__name intro__name_welcome">Артем Калоев </div>
-                  <div class="intro__site intro__site_welcome">Личный сайт веб-разработчика</div>
+        <div class="flipper">
+          <div class="welcome">
+            <div class="welcome__info">
+              <div class="welcome__about">
+                <div class="intro"><img class="intro__avatar intro__avatar_welcome" src="images/avatar.jpg"/>
+                  <div class="intro__text">
+                    <div class="intro__name intro__name_welcome">Артем Калоев </div>
+                    <div class="intro__site intro__site_welcome">Личный сайт веб-разработчика</div>
+                  </div>
                 </div>
               </div>
+              <div class="welcome__socials">
+                <ul class="socials">
+                  <li class="socials__item socials__item_welcome"><a class="socials__link social" href="https://vk.com">
+                      <svg class="social__icon social__icon_welcome" width="25" height="25">
+                        <use xlink:href="images/sprite.svg#vk"></use>
+                      </svg></a></li>
+                  <li class="socials__item socials__item_welcome"><a class="socials__link social" href="https://github.com/">
+                      <svg class="social__icon social__icon_welcome" width="25" height="25">
+                        <use xlink:href="images/sprite.svg#github"></use>
+                      </svg></a></li>
+                  <li class="socials__item socials__item_welcome"><a class="socials__link social" href="https://ru.linkedin.com/">
+                      <svg class="social__icon social__icon_welcome" width="25" height="25">
+                        <use xlink:href="images/sprite.svg#linkedin"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
             </div>
-            <div class="welcome__socials">
-              <ul class="socials">
-                <li class="socials__item socials__item_welcome"><a class="socials__link social" href="https://vk.com">
-                    <svg class="social__icon social__icon_welcome" width="25" height="25">
-                      <use xlink:href="images/sprite.svg#vk"></use>
-                    </svg></a></li>
-                <li class="socials__item socials__item_welcome"><a class="socials__link social" href="https://github.com/">
-                    <svg class="social__icon social__icon_welcome" width="25" height="25">
-                      <use xlink:href="images/sprite.svg#github"></use>
-                    </svg></a></li>
-                <li class="socials__item socials__item_welcome"><a class="socials__link social" href="https://ru.linkedin.com/">
-                    <svg class="social__icon social__icon_welcome" width="25" height="25">
-                      <use xlink:href="images/sprite.svg#linkedin"></use>
-                    </svg></a></li>
+            <div class="welcome__buttons">
+              <ul class="buttons">
+                <li class="buttons__item"><a class="button button_works" href="./works.html">Мои работы</a></li>
+                <li class="buttons__item"><a class="button button_about" href="./about.html">Обо мне</a></li>
+                <li class="buttons__item"><a class="button button_blog" href="./blog.html">Блог</a></li>
               </ul>
             </div>
           </div>
-          <div class="welcome__buttons">
-            <ul class="buttons">
-              <li class="buttons__item"><a class="button button_works" href="./works.html">Мои работы</a></li>
-              <li class="buttons__item"><a class="button button_about" href="./about.html">Обо мне</a></li>
-              <li class="buttons__item"><a class="button button_blog" href="./blog.html">Блог</a></li>
-            </ul>
+          <div class="login">
+            <div class="login__info">
+              <div class="subtitle login__subtitle">
+                <div class="subtitle__text subtitle__text_login">Авторизуйтесь</div>
+              </div>
+              <ul class="inputs login__inputs">
+                <li class="inputs__item">
+                  <div class="inputs__img-block">
+                    <svg class="inputs__icon" width="16" height="16">
+                      <use xlink:href="images/sprite.svg#login"></use>
+                    </svg>
+                  </div>
+                  <input class="inputs__input" type="text" placeholder="Логин">
+                </li>
+                <li class="inputs__item">
+                  <div class="inputs__img-block">
+                    <svg class="inputs__icon" width="16" height="16">
+                      <use xlink:href="images/sprite.svg#password"></use>
+                    </svg>
+                  </div>
+                  <input class="inputs__input" type="text" placeholder="Пароль">
+                </li>
+              </ul>
+              <div class="login__human-info human-info">
+                <div class="human-info__check check">
+                  <div class="check__box"></div>
+                  <div class="check__label">Я человек</div>
+                </div>
+                <div class="human-info__radio radio">
+                  <div class="radio__question">Вы точно не робот?</div>
+                  <ul class="radio__list radio-btns">
+                    <li class="radio-btns__item">
+                      <div class="radio-btns__box"></div>
+                      <div class="radio-btns__label">Да</div>
+                    </li>
+                    <li class="radio-btns__item">
+                      <div class="radio-btns__box"></div>
+                      <div class="radio-btns__label">Не уверен</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="login__buttons">
+              <ul class="buttons">
+                <li class="buttons__item buttons__item_login"><a class="button button_to-main" href="#">На главную</a></li>
+                <li class="buttons__item buttons__item_login"><a class="button button_auth" href="#">Войти</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

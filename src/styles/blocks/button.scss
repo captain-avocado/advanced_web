@@ -5,12 +5,10 @@
     height: 100%;
     color: $white;
     font-size: 16px;
-    &_works, &_submit {
-        border-radius: 0 0 0 4px;
-    }
-    &_blog, &_reset {
-        border-radius: 0 0 4px 0;
-    }
+    text-align: center;
+    
+    border-radius: inherit;
+
     padding: 15px 25px;
     background-color: $bg-green;
     &:hover {

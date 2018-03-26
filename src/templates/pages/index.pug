@@ -2,6 +2,7 @@ extends ../base
 include ../blocks/socials
 include ../blocks/intro
 include ../blocks/credits
+include ../blocks/subtitle
 block head
     title Авторизация
 block variables
@@ -25,20 +26,66 @@ block variables
             }
         ];
 
+        var loginBtnList = [
+            {
+                href: '#',
+                spec: 'to-main',
+                text: 'На главную'
+            },
+            {
+                href: '#',
+                spec: 'auth',
+                text: 'Войти'
+            }
+        ];
+
 block content
     section.section.main
         .main__auth
             a(href="#").btn-auth Авторизоваться
         .main__welcome
-            .welcome
-                .welcome__info
-                    .welcome__about
-                        +intro('welcome')
-                    .welcome__socials
-                        +socials('welcome')
-                .welcome__buttons
-                    ul.buttons
-                        each item in buttonsList
-                            li.buttons__item
-                                a(href=`${item.href}`, class=`button button_${item.spec}`) #{item.text}
+            .flipper
+                .welcome
+                    .welcome__info
+                        .welcome__about
+                            +intro('welcome')
+                        .welcome__socials
+                            +socials('welcome')
+                    .welcome__buttons
+                        ul.buttons
+                            each item in buttonsList
+                                li.buttons__item
+                                    a(href=`${item.href}`, class=`button button_${item.spec}`) #{item.text}
+                .login
+                    .login__info
+                        +subtitle('Авторизуйтесь','login')
+                        ul.inputs.login__inputs
+                            li.inputs__item
+                                .inputs__img-block
+                                    svg(width='16', height='16').inputs__icon
+                                        use(xlink:href='images/sprite.svg#login')
+                                input(type="text", placeholder='Логин').inputs__input
+                            li.inputs__item
+                                .inputs__img-block
+                                    svg(width='16', height='16').inputs__icon
+                                        use(xlink:href='images/sprite.svg#password')
+                                input(type="text", placeholder='Пароль').inputs__input
+                        .login__human-info.human-info
+                            .human-info__check.check
+                                .check__box
+                                .check__label Я человек
+                            .human-info__radio.radio
+                                .radio__question Вы точно не робот?
+                                ul.radio__list.radio-btns
+                                    li.radio-btns__item
+                                        .radio-btns__box
+                                        .radio-btns__label Да
+                                    li.radio-btns__item
+                                        .radio-btns__box
+                                        .radio-btns__label Не уверен
+                    .login__buttons
+                        ul.buttons
+                            each item in loginBtnList
+                                li.buttons__item.buttons__item_login
+                                    a(href='#', class=`button button_${item.spec}`) #{item.text}
         +credits('main')
