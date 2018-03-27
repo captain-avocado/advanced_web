@@ -1,22 +1,32 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const paths = {
+  src: path.join(__dirname, 'src/'),
+  dist: path.join(__dirname, 'dist/')
+};
+
 module.exports = {
     mode: 'development',
-    entry: path.join(__dirname, 'src/scripts/main.js'),
+    entry: {
+      'index': paths.src + 'scripts/index.js',
+      'blog': paths.src + 'scripts/blog.js',
+      'works': paths.src + 'scripts/works.js',
+      'about': paths.src + 'scripts/about.js'
+    },
     output: {
-        path: path.join(__dirname, 'dest/scripts'),
-        filename: '[name].bundle.js'
+        path: paths.dist,
+        filename: '[name].min.js'
     },
     plugins: [
       // new webpack.optimize.CommonsChunkPlugin({
       //     name: 'common'
       // }),
       
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery'  
-    })
+    //   new webpack.ProvidePlugin({
+    //     $: 'jquery',
+    //     jQuery: 'jquery'  
+    //   })
     ],
     module: {
         rules: [

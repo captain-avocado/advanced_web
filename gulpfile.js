@@ -75,14 +75,14 @@ function templates() {
 
 function scripts() {
     // clean('scripts');
-    return gulp.src(paths.src + 'scripts/**/*.js')
+    return gulp.src(paths.src + 'scripts/*.js')
     .pipe($gp.plumber({
         errorHandler: reportError
     }))
     .pipe($gp.sourcemaps.init())
     .pipe($gp.webpack(webpackConfig, webpack))
     .pipe($gp.uglify())
-    .pipe($gp.concat('scripts.min.js'))
+    // .pipe($gp.concat('scripts.min.js'))
     .pipe($gp.sourcemaps.write('/'))
     .pipe(gulp.dest(paths.dest + 'scripts/'));
 }
