@@ -4,13 +4,14 @@ mixin hero(className)
     include ../blocks/intro
     include ../blocks/arrow
     include ../blocks/title
+    include ../blocks/menu
 
-    section.section.hero(class=`hero_${className}`)
+    .section.hero(class=`hero_${className}`)
             header.hero__header.header
                 .header__socials.socials_about
                     +socials('hero')
-                a(href='#').header__menu.menu
-                    .menu__icon
+                a(href='#').header__menu-burger.menu-burger
+                    .menu-burger__icon
             .hero__intro
                 if (className === 'blog')
                     .intro
@@ -24,3 +25,5 @@ mixin hero(className)
             svg(class=`triangles_${className}`, viewBox='0 0 1200 130', preserveAspectRatio='none').hero__triangles.triangles
                     polygon(points='0,0 600,110 600,130 0,130').triangles__left
                     polygon(points='600,110 1200,0 1200,130 600,130').triangles__right
+            +menu('hero')
+

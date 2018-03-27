@@ -28,6 +28,10 @@
             text-align: center;
             line-height: 1.05;
         }
+        &_index, &_blog, &_my-works, &_about {
+            margin: 0;
+            color: $white;
+        }
     }
 
     &__svg {

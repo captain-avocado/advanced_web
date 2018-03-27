@@ -4,13 +4,15 @@
     background-position: center;
 
     &_blog {
-        min-height: 400px;
+        min-height: 100vh;
+        // min-height: 400px;
         @include phones {
             min-height: 568px;
         }
     }
 
-    min-height: 620px;
+    min-height: 100vh;
+    // min-height: 620px;
     // height: 100%;
     position: relative;
 
@@ -35,6 +37,15 @@
         left: 0;
         transform: translateY(-100%);
     }
+
+    &__menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 100%;
+        z-index: 50;
+    }
 }
 
 .header {
@@ -44,15 +55,18 @@
         margin-top: 3%;
         margin-left: 3%;
     }
+    &__menu-burger {
+        margin-top: 3%;
+        margin-right: 3%;
+        z-index: 100;
+    }
 }
 
-.menu {
+.menu-burger {
     display: block;
     width: 36px;
     height: 36px;
     position: relative;
-    margin-top: 3%;
-    margin-right: 3%;
     &__icon {
         height: 5px;
         width: 100%;

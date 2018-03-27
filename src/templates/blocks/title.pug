@@ -1,5 +1,8 @@
-mixin title(text, className)
+mixin title(text, className, href)
     .title(class=`${className}__title`)
-        .title__text(class=`title__text_${className}`)= text
+        if (href !== undefined)
+            a.title__text(href=`${href}`, class=`title__text_${className}`)= text
+        else
+            .title__text(class=`title__text_${className}`)= text
         svg(class=`title__svg title__svg_${className}`)
             use(xlink:href=`images/sprite.svg#${className}_header`)

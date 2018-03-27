@@ -2,6 +2,12 @@ body {
     //fonts
     font-family: 'Roboto';
     font-size: 16px;
+
+    overflow: auto;
+    &.active {
+        height: 100vh;
+        overflow: hidden;
+    }
 }
 
 html {

@@ -1,0 +1,31 @@
+mixin menu(className)
+    include ../blocks/title
+
+    -
+        var menuSet = [
+            {
+                href: './works.html',
+                spec: 'my-works',
+                text: 'Мои работы'
+            },
+            {
+                href: './about.html',
+                spec: 'about',
+                text: 'Обо мне'
+            },
+            {
+                href: './blog.html',
+                spec: 'blog',
+                text: 'Блог'
+            },
+            {
+                href: './index.html',
+                spec: 'index',
+                text: 'Авторизация'
+            }
+        ];
+
+    ul.menu(class=`${className}__menu`)
+        each item in menuSet
+            li.menu__item
+                +title(`${item.text}`, item.spec, item.href)

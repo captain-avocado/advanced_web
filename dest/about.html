@@ -9,7 +9,7 @@
     <title>Обо мне</title>
   </head>
   <body>
-    <section class="section hero hero_undefined">
+    <div class="section hero hero_undefined">
       <header class="hero__header header">
         <div class="header__socials socials_about">
           <ul class="socials">
@@ -26,8 +26,8 @@
                   <use xlink:href="images/sprite.svg#linkedin"></use>
                 </svg></a></li>
           </ul>
-        </div><a class="header__menu menu" href="#">
-          <div class="menu__icon"></div></a>
+        </div><a class="header__menu-burger menu-burger" href="#">
+          <div class="menu-burger__icon"></div></a>
       </header>
       <div class="hero__intro">
         <div class="intro"><img class="intro__avatar intro__avatar_hero" src="images/avatar.jpg"/>
@@ -47,7 +47,37 @@
         <polygon class="triangles__left" points="0,0 600,110 600,130 0,130"></polygon>
         <polygon class="triangles__right" points="600,110 1200,0 1200,130 600,130"></polygon>
       </svg>
-    </section>
+      <ul class="menu hero__menu">
+        <li class="menu__item">
+          <div class="title my-works__title"><a class="title__text title__text_my-works" href="./works.html">Мои работы</a>
+            <svg class="title__svg title__svg_my-works">
+              <use xlink:href="images/sprite.svg#my-works_header"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="menu__item">
+          <div class="title about__title"><a class="title__text title__text_about" href="./about.html">Обо мне</a>
+            <svg class="title__svg title__svg_about">
+              <use xlink:href="images/sprite.svg#about_header"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="menu__item">
+          <div class="title blog__title"><a class="title__text title__text_blog" href="./blog.html">Блог</a>
+            <svg class="title__svg title__svg_blog">
+              <use xlink:href="images/sprite.svg#blog_header"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="menu__item">
+          <div class="title index__title"><a class="title__text title__text_index" href="./index.html">Авторизация</a>
+            <svg class="title__svg title__svg_index">
+              <use xlink:href="images/sprite.svg#index_header"></use>
+            </svg>
+          </div>
+        </li>
+      </ul>
+    </div>
     <section class="section personal">
       <div class="personal__left-col">
         <div class="personal__avatar-area avatar-area">
