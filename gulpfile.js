@@ -133,6 +133,11 @@ function fonts() {
     return gulp.src(paths.src + 'fonts/**').pipe(gulp.dest(paths.dest + 'fonts/'));
 }
 
+function fontAwesome() {
+    return gulp.src(['node_modules/font-awesome/fonts/*.woff2', 'node_modules/font-awesome/fonts/*.woff'])
+      .pipe(gulp.dest(paths.dest + 'fonts/FontAwesome/'));
+}
+
 function watch() {
     gulp.watch(paths.src + 'styles/**/*.scss', styles);
     gulp.watch(paths.src + 'scripts/**/*.js', scripts);
@@ -160,12 +165,13 @@ gulp.task('scripts', scripts);
 gulp.task('images', images);
 gulp.task('sprite', sprite);
 gulp.task('fonts', fonts);
+gulp.task('font-awesome', fontAwesome);
 gulp.task('watch', watch);
 gulp.task('serve', serve);
 //чекнуть соурсмапы
 gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(styles, templates, sprite, images, scripts, fonts)
+    gulp.parallel(styles, templates, sprite, images, scripts, fonts, fontAwesome)
 ));
 gulp.task('default', gulp.series(
     gulp.task('build'),

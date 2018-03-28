@@ -1,4 +1,4 @@
-import fontAwesome from './modules/fontawesome-all';
+// import fontAwesome from './modules/fontawesome-all';
 import burger from './modules/burger';
 
 
