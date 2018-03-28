@@ -1,14 +1,30 @@
 .main {
-    background-image: url('../images/bg.jpg');
-    background-size: cover;
-    
-    height: 100%;
+    @include tablets {
+        background-image: url('../images/bg.jpg');
+        background-size: cover;
+    }    
+    height: 100vh;
+    min-height: 620px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // height: 1270px;
+        @include tablets {
+            display: none;
+        }
+    }
+
     &__auth {
+        z-index: 20;
         align-self: flex-end;
         margin: 20px;
         @include phones {
@@ -29,35 +45,17 @@
             position: static;
             transform: translate(0, 0);
             margin: auto;
-        }
-
-
-        //
-        // // position: relative;
-        // transition: 0.6s;
-	    // transform-style: preserve-3d;
-        // perspective: 1000px;
-        // &:hover {
-        //     transform: rotateY(180deg);
-        //     transition: 0.6s;
-        //     transform-origin: 50% 200px;
-
-        // }
-        //
-        
-
+        }    
+        //FIXME
         perspective: 1000px;
-        // &:hover .flipper {
-        //     transform: rotateY(180deg);
-        // }
-
-
+        //END FIXME
     }
     &__credits {
+        z-index: 20;
         margin-bottom: 3%;
         @include phones {
             margin: auto;
-            width: 70%;
+            width: 75%;
         }
     }
 }

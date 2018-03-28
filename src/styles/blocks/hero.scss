@@ -4,8 +4,8 @@
     background-position: center;
 
     &_blog {
-        min-height: 100vh;
-        // min-height: 400px;
+        height: 100vh;
+        min-height: 650px;
         @include phones {
             min-height: 568px;
         }

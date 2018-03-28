@@ -1,0 +1,26 @@
+.parallax {
+    height: 100%;
+
+    &__layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    &__image {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        height: 100%;
+
+        &[data-num="4"] {
+            height: 105%;
+        }
+        &[data-num="1"] {
+            height: 120%;
+        }
+    }
+
+}

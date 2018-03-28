@@ -123,7 +123,7 @@ function sprite() {
 function images() {
     // clean('images');
     return gulp.src([paths.src + 'images/**/*.*', `!${paths.src}images/icons/*.svg`])
-    .pipe($gp.imagemin({ progressive: true }))
+    // .pipe($gp.imagemin({ progressive: true }))
     .pipe($gp.rename({dirname: ''}))
     .pipe(gulp.dest(paths.dest + 'images'));
 }
