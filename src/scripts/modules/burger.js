@@ -6,6 +6,7 @@ export default function burger() {
 
     burger.addEventListener('click', (e) => {
         e.preventDefault();
+        burger.classList.toggle('active');
         menu.classList.toggle('active');
         body.classList.toggle('active');
     });
