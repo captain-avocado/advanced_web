@@ -2,16 +2,12 @@ export default function parallax() {
     
     const parallaxContainer = document.getElementById('parallax');
     const layers = parallaxContainer.children;
-
-    console.log(layers);
     
     const moveLayers = (e) => {
         const initialX = window.innerWidth / 2 - e.pageX;
         const initialY = window.innerHeight / 2 - e.pageY;
-        // console.log(initialX, initialY);
 
         Array.from(layers).forEach((layer, i) => {
-
             const k = i / 100;
             const positionX = initialX * k;
             const positionY = initialY * k;
@@ -20,16 +16,8 @@ export default function parallax() {
             layer.style.transform = `translate(${positionX}px, ${positionY}px)`;
             layer.style.bottom = `-${bottomPosition}px`;
         });
-
     };
 
     window.addEventListener('mousemove', moveLayers);
-
-
-    // window.onscroll = function() {
-    //     const wScroll = window.pageYOffset;
-
-    //     console.log(wScroll);
-    // };
 
 }

@@ -5,7 +5,6 @@ include ../blocks/credits
 include ../blocks/subtitle
 block head
     title Авторизация
-    script(src="scripts/index.min.js")
 block variables
     -
 
@@ -94,3 +93,4 @@ block content
                                 li.buttons__item.buttons__item_login
                                     a(href='#', class=`button button_${item.spec}`) #{item.text}
         +credits('main')
+    script(src="scripts/index.min.js")

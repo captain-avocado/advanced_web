@@ -6,9 +6,11 @@
     opacity: 0;
     transition: opacity .5s;
 
+    z-index: 0;
     &.active {
         opacity: 1;
         transition: opacity .5s;
+        z-index: 50;
     }
 
     &:before {

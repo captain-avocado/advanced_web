@@ -7,6 +7,8 @@ mixin hero(className)
     include ../blocks/menu
 
     .section.hero(class=`hero_${className}`)
+            .hero__bg
+                img(src='images/bg.jpg').hero__img
             header.hero__header.header
                 .header__socials.socials_about
                     +socials('hero')

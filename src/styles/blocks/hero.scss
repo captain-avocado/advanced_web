@@ -1,7 +1,7 @@
 .hero {
-    background-image: url('../images/bg.jpg');
-    background-size: cover;
-    background-position: center;
+    // background-image: url('../images/bg.jpg');
+    // background-size: cover;
+    // background-position: center;
 
     &_blog {
         height: 100vh;
@@ -11,10 +11,30 @@
         }
     }
 
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 620px;
     // min-height: 620px;
     // height: 100%;
+    overflow: hidden;
     position: relative;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 120%;
+    }
+
+    &__img {
+        // display: block;
+        // min-width: 120%;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        z-index: -1;
+    }
 
     &__intro {
         position: absolute;
@@ -44,7 +64,7 @@
         right: 0;
         top: 0;
         height: 100%;
-        z-index: 50;
+        // z-index: 50;
     }
 }
 
