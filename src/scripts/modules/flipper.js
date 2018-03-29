@@ -4,14 +4,34 @@ export default function flipper() {
     const flipperBlock = document.querySelector('.flipper');
     const back = document.querySelector('.button_to-main');
 
-    btnAuth.addEventListener('click', (e) => {
+    const flipBack = (e) => {
         e.preventDefault();
-        flipperBlock.style.transform = 'rotateY(180deg)';
-    });
+        btnAuth.style.display = 'none';
+        flipperBlock.classList.remove('front');
+        flipperBlock.classList.add('back');
+    };
 
-    back.addEventListener('click', (e) => {
+    const flipFront = (e) => {
         e.preventDefault();
-        flipperBlock.style.transform = 'rotateY(0deg)';
+        btnAuth.style.display = '';
+        flipperBlock.classList.remove('back');
+        flipperBlock.classList.add('front');
+    };
+
+    btnAuth.addEventListener('click', flipBack);
+
+    back.addEventListener('click', flipFront);
+
+    document.addEventListener('click', (e) => {
+
+        const isClickedInsideFlipper = flipperBlock.contains(e.target);
+        const isClickedInsideAuth = btnAuth.contains(e.target);
+        const isBack = flipperBlock.classList.contains('back');
+
+        if (!isClickedInsideFlipper && !isClickedInsideAuth && isBack) {
+            flipFront(e);
+        }
+
     });
 
 }

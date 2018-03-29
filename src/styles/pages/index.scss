@@ -171,7 +171,14 @@
     transition: 0.6s;
 	transform-style: preserve-3d;
 
-	position: relative;
+    position: relative;
+    
+    &.back {
+        transform: rotateY(180deg);
+    }
+    &.front {
+        transform: rotateY(0deg);
+    }
 }
 
 .welcome, .login {
