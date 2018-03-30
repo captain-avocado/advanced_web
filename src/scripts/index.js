@@ -1,11 +1,13 @@
 import flipper from './modules/flipper';
 import parallax from './modules/parallax';
+import preloader from './modules/preloader';
+import flipStart from './modules/flipStart';
 
-const flipperBlock = document.querySelector('.flipper');
 
 window.onload = init;
 function init() {
-    flipperBlock.classList.add('active');
+    preloader();
+    flipStart();
     flipper();
     parallax();
 }

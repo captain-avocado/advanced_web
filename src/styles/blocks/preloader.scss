@@ -1,0 +1,38 @@
+.preloader {
+    visibility: hidden;
+    // opacity: 0;
+    // transition: opacity .5s;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    overflow: hidden;
+    &__bg {
+        width: 100%;
+        min-height: 100%;
+    }
+    &__svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+
+        stroke: white;
+        // stroke-width: 1px;
+        stroke-dasharray: 440;
+        stroke-dashoffset: 0;
+    }
+    &.active {
+            // display: block;
+            z-index: 110;
+            // opacity: 1;
+            visibility: visible;
+            & ~ section {
+            display: none;
+        }
+    }
+
+}
