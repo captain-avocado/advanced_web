@@ -1,9 +1,12 @@
 import flipper from './modules/flipper';
 import parallax from './modules/parallax';
 
-window.onload = init;
+const flipperBlock = document.querySelector('.flipper');
 
-function init(){
+window.onload = init;
+function init() {
+    flipperBlock.classList.add('active');
     flipper();
     parallax();
 }
+

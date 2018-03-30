@@ -31,7 +31,5 @@ export default function flipper() {
         if (!isClickedInsideFlipper && !isClickedInsideAuth && isBack) {
             flipFront(e);
         }
-
     });
-
 }

@@ -56,7 +56,9 @@ function styles() {
         type: 'px-to-rem',
         rootSize: 16
     }))
-    .pipe($gp.cssnano())
+    .pipe($gp.cssnano({
+        reduceIdents: false
+    }))
     .pipe($gp.rename({  suffix: '.min'  }))
     .pipe($gp.sourcemaps.write('/'))
     .pipe(gulp.dest(paths.dest + 'styles/'))

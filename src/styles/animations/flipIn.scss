@@ -1,0 +1,16 @@
+@keyframes flipIn {
+    from {
+      -webkit-transform: perspective(00px) rotate3d(1, 0, 0, -30deg);
+      transform: perspective(0px) rotate3d(1, 0, 0, -30deg);
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      ;
+      opacity: 0.5;
+    }
+    to {
+      -webkit-transform: perspective(0px);
+      transform: perspective(0px);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+  }
