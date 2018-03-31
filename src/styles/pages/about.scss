@@ -175,22 +175,29 @@
 }
 
 .map {
-    background-image: url('../images/bg.jpg');
-    background-size: cover;
-
     min-height: 980px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @include phones {
-        align-items: flex-start;
+    
+    &__gmap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
     }
     &__contacts {    
         width: 380px;
         height: fit-content;
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         @include phones {
             width: 100%;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
         }
     }
 

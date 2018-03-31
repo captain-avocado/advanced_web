@@ -1,29 +1,31 @@
 .hero {
+    
     // background-image: url('../images/bg.jpg');
     // background-size: cover;
     // background-position: center;
-
+    height: 100vh;
+    min-height: 650px;
+    overflow: hidden;
+    position: relative;
+    @include tablets {
+        background-image: url('../images/bg.jpg');
+        background-size: cover; 
+        background-position: center;
+    }
     &_blog {
-        height: 100vh;
-        min-height: 650px;
         @include phones {
             min-height: 568px;
         }
     }
-
-    height: 100vh;
-    min-height: 620px;
-    // min-height: 620px;
-    // height: 100%;
-    overflow: hidden;
-    position: relative;
-
     &__bg {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         height: 130%;
+        @include tablets {
+            display: none;
+        }
     }
 
     &__img {

@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "google-maps": "^3.2.1",
     "jquery": "^3.3.1"
   }
 }

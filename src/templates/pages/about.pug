@@ -61,7 +61,8 @@ block content
                                         text(x="60" y="65").circle__text #{skillItem}
                                     .circle__text #{skillItem}
     section.section.map
-        .map__contacts.contacts
+        .map__gmap#gmap
+        .map__contacts.contacts#contacts
             +subtitle('Контакты', 'contacts')
             ul.contacts__list
                 each item in contactsList

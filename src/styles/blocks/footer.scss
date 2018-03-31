@@ -52,6 +52,9 @@
     display: flex;
     color: $white;
     &__item {
+        &:hover {
+            color: $bg-green;
+        }
         &:not(:last-of-type) {
             margin-right: 40px;
             @include phones {
