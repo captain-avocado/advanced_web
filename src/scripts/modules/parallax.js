@@ -13,7 +13,7 @@ export default function parallax() {
             const positionY = initialY * k;
             const bottomPosition = window.innerHeight / 2 * k;
 
-            layer.style.transform = `translate(${positionX}px, ${positionY}px)`;
+            layer.style.transform = `translate3d(${positionX}px, ${positionY}px, 0)`;
             layer.style.bottom = `-${bottomPosition}px`;
         });
     };

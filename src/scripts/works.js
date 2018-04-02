@@ -32,10 +32,41 @@ const slideItem = function(slider, axis, direction) {
     
     const offset = size * direction + 'px';
 
-    slider.style.transition = 'transform .5s';
-    slider.style.transform = `translate${axis}(${offset})`;
+
+    if (direction < 0) {
+        slider.style.transition = 'transform .5s';
+        slider.style.transform = `translate${axis}(${offset})`;
+    } else {
+        slider.insertBefore(slider.firstElementChild, slider.lastElementChild);
+        slider.style.transform = `translate${axis}(-${offset})`;
+        slider.style.transition = 'transform .5s';
+        slider.style.transform = `translate${axis}(${offset})`;
+    }
+
+
+    // if (direction < 0) {
+    // slider.style.transition = 'transform .5s';
+    // slider.style.transform = `translate${axis}(${offset})`;
+    // }
+    // if (direction > 0) {
+    //     // slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
+
+        
+    //     slider.style.transform = `translate${axis}(${offset})`;
+        
+        
+    // //     // slider.style.transform = `translate${axis}(${offset})`;
+    //     slider.style.transition = 'transform 5s';
+    //     slider.style.transform = `translateY(0)`;
+    //     slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
+        
+    //     // slider.style.transition = 'transform 5s';
+    // //     slider.style.transform = 'translateY(0, 35%)';
+    // }
+    
 
 };
+
 
 
 const descr = document.querySelector('.descr');
@@ -43,21 +74,11 @@ const preview = document.querySelector('.preview');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
+// for (let i = 0; i < prev.children; i++) {
+//     prev.children[i].style.top = i * 100 + '%';
+// }
 const nextControl = document.querySelector('.slide-next');
 const prevControl = document.querySelector('.slide-prev');
-
-// function moveElement(element) {
-//     element.style.transition = '';
-//     element.style.transform = 'translate(0, 0)';
-//     element.appendChild(element.firstElementChild);
-//     console.log(' in movelee!!ment' ,element);
-// }
-
-// const translateLayout = (view, controlNext, controlPrev) => {
-//     slideItem(preview, 'X', -1);
-//     slideItem(next, 'Y', -1);
-//     slideItem(prev, 'Y', 1);
-// };
 
 nextControl.addEventListener('click', (e) => {
     e.preventDefault();
@@ -81,17 +102,25 @@ preview.addEventListener('transitionend', () => {
     preview.appendChild(preview.firstElementChild);
     console.log(' in moveleement' ,preview);
 });
+
+// preview.addEventListener('transitionstart', () => {
+//     if (start) 
+// });
+
 next.addEventListener('transitionend', () => {
     next.style.transition = '';
     next.style.transform = 'translate(0, 0)';
     next.appendChild(next.firstElementChild);
     console.log(' in movelee!!ment' ,next);
 });
-prev.addEventListener('transitionend', () => {
-    prev.style.transition = '';
-    prev.style.transform = 'translate(0, 0)';
-    prev.appendChild(prev.firstElementChild);
-    console.log(' in movelee!!ment' ,prev);
+prev.addEventListener('transitionstart', () => {
+    // prev.style.transition = '';
+    // prev.style.transform = 'translate(0, 0)';
+    // prev.appendChild(prev.firstElementChild);
+    // // prev.insertBefore(prev.lastElementChild, prev.firstElementChild);
+    // // prev.style.transition = '.5s';
+    // // prev.style.transform = 'translate(0, 0)';
+    // console.log(' in movelee!!ment' ,prev);
 });
 // next.addEventListener('transitionend', moveElement(next));
 // prev.addEventListener('transitionend', moveElement(prev));

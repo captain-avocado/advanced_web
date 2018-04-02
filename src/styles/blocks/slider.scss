@@ -164,9 +164,8 @@
             fill: $white;
         }
         &_next {
-            //FIXME
-            transform: rotate(180deg);
-            //END FIXME
+            transform: rotate(180deg) translate(-50%, -50%);
+            transform-origin: top left;
         }
     }   
 }

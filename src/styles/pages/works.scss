@@ -159,7 +159,8 @@
         left: 0;
         // filter: blur(10px);
         z-index: 0;
-        background: url('../images/bg-works.jpg') 50% 46% no-repeat;
+        background: url('../images/bg-works.jpg');
+        background-repeat: no-repeat;
     }
     &__input, &__text-area {
         position: relative;

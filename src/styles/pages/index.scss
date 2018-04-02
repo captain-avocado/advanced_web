@@ -3,6 +3,10 @@
         background-image: url('../images/bg.jpg');
         background-size: cover;
     }    
+    overflow: hidden;
+
+
+
     height: 100vh;
     min-height: 620px;
     position: relative;
@@ -17,7 +21,6 @@
         left: 0;
         right: 0;
         bottom: 0;
-        // height: 1270px;
         @include tablets {
             display: none;
         }
@@ -28,7 +31,6 @@
         align-self: flex-end;
         margin: 20px;
         @include phones {
-            // align-self: center
             margin: auto;
         }
     }
