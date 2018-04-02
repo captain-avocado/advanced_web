@@ -1,10 +1,12 @@
 import burger from './modules/burger';
 import { parallaxHero } from './modules/parallaxHero';
-import preloader from './modules/preloader';
+import { preloader } from './modules/preloader';
+
+preloader.start();
 
 window.onload = function() {
-    preloader();
     burger();
+    setTimeout(preloader.hide, 500);
 };
 
 window.onscroll = function() {

@@ -1,12 +1,20 @@
 import burger from './modules/burger';
 import { parallaxHero } from './modules/parallaxHero';
 import { blur } from './modules/blur';
-import preloader from './modules/preloader';
+import { preloader } from './modules/preloader';
+
+preloader.start();
+
+
+
+
 
 window.onload = function() {
-    preloader();
+    // preloader();
+    // preloader.classList.remove('active');
     burger();
     blur.set();
+    setTimeout(preloader.hide, 500);
 };
 
 window.onscroll = function() {
@@ -17,6 +25,13 @@ window.onscroll = function() {
 window.onresize = function() {
     blur.set();
 };
+
+
+
+
+
+//
+let start = false;
 
 const slideItem = function(slider, axis, direction) {
     // const items = Array.from(slider.children);
@@ -34,13 +49,20 @@ const slideItem = function(slider, axis, direction) {
 
 
     if (direction < 0) {
-        slider.style.transition = 'transform .5s';
+        slider.style.transition = 'transform 5s';
         slider.style.transform = `translate${axis}(${offset})`;
     } else {
-        slider.insertBefore(slider.firstElementChild, slider.lastElementChild);
+        
         slider.style.transform = `translate${axis}(-${offset})`;
-        slider.style.transition = 'transform .5s';
+        slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
+        slider.style.transition = 'transform 5s';
+        // slider.style.transform = 'translate(0, 1px)';
+
         slider.style.transform = `translate${axis}(${offset})`;
+        // slider.style.transition = 'transform .5s';
+        // slider.style.transform = `translate${axis}(-${offset})`;
+        // slider.style.transform = `translate${axis}(0)`;
+        // slider.style.transition = '';
     }
 
 
@@ -84,7 +106,9 @@ nextControl.addEventListener('click', (e) => {
     e.preventDefault();
     slideItem(preview, 'X', -1);
     slideItem(next, 'Y', -1);
+    // start = true;
     slideItem(prev, 'Y', 1);
+    // start = false;
     console.log('int next');
 });
 
@@ -103,9 +127,18 @@ preview.addEventListener('transitionend', () => {
     console.log(' in moveleement' ,preview);
 });
 
-// preview.addEventListener('transitionstart', () => {
-//     if (start) 
-// });
+prev.addEventListener('transitionstart', () => {
+    console.log('STRT = ', start);
+    // if (start) {
+    // prev.insertBefore(prev.lastElementChild, prev.firstElementChild);
+    // prev.style.transform = 'translate(0, 0)';
+    // }
+});
+
+prev.addEventListener('transitionend', () => {
+    prev.style.transform = 'translate(0, 0)';
+    prev.style.transition = '';
+});
 
 next.addEventListener('transitionend', () => {
     next.style.transition = '';
@@ -113,15 +146,15 @@ next.addEventListener('transitionend', () => {
     next.appendChild(next.firstElementChild);
     console.log(' in movelee!!ment' ,next);
 });
-prev.addEventListener('transitionstart', () => {
-    // prev.style.transition = '';
-    // prev.style.transform = 'translate(0, 0)';
-    // prev.appendChild(prev.firstElementChild);
-    // // prev.insertBefore(prev.lastElementChild, prev.firstElementChild);
-    // // prev.style.transition = '.5s';
-    // // prev.style.transform = 'translate(0, 0)';
-    // console.log(' in movelee!!ment' ,prev);
-});
+// prev.addEventListener('transitionstart', () => {
+//     // prev.style.transition = '';
+//     // prev.style.transform = 'translate(0, 0)';
+//     // prev.appendChild(prev.firstElementChild);
+//     // // prev.insertBefore(prev.lastElementChild, prev.firstElementChild);
+//     // // prev.style.transition = '.5s';
+//     // // prev.style.transform = 'translate(0, 0)';
+//     // console.log(' in movelee!!ment' ,prev);
+// });
 // next.addEventListener('transitionend', moveElement(next));
 // prev.addEventListener('transitionend', moveElement(prev));
 

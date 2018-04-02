@@ -19,11 +19,13 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-
-        stroke: white;
+        fill: transparent;
+        stroke: $transp-white;
+        stroke-width: 1px;
         // stroke-width: 1px;
         stroke-dasharray: 440;
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 440;
+        transition: stroke-dashoffset .5s;
     }
     &.active {
             // display: block;
@@ -36,3 +38,7 @@
     }
 
 }
+
+// #preloader_round text {
+//     fill: crimson
+// }
