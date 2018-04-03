@@ -11,8 +11,8 @@ block content
     +hero('my-works')
     section.section.works
         +title('Мои работы', 'works')
-        .works__slider.slider
-            .slider__descr
+        .works__work-slider.work-slider
+            .work-slider__descr
                 .descr
                     +subtitle('Сайт школы онлайн образования', 'descr')
                     .descr__tech html, css, javascript
@@ -21,52 +21,52 @@ block content
                             svg(width='20', height='20').btn-show__icon
                                 use(xlink:href='images/sprite.svg#link')
                             .btn-show__text Посмотреть сайт
-            .slider__preview
-                ul.preview
-                    li.preview__item.active
-                        .preview__wrapper.slide-wrap
-                            img(src='images/work-1.png').preview__img
-                    li.preview__item
-                        .preview__wrapper.slide-wrap
-                            img(src='images/work-2.png').preview__img
-                    li.preview__item
-                        .preview__wrapper.slide-wrap
-                            img(src='images/work-3.png').preview__img
-                    li.preview__item
-                        .preview__wrapper.slide-wrap
-                            img(src='images/work-4.png').preview__img
-            ul.slider__controls.controls
-                li.controls__item.controls__item_prev
-                    ul.controls__prev.prev
-                        li.prev__item.active
-                            .prev__wrapper.slide-wrap
-                                img(src='images/work-4.png').prev__img
-                        li.prev__item
-                            .prev__wrapper.slide-wrap
-                                img(src='images/work-3.png').prev__img
-                        li.prev__item
-                            .prev__wrapper.slide-wrap
-                                img(src='images/work-2.png').prev__img
-                        li.prev__item
-                            .prev__wrapper.slide-wrap
-                                img(src='images/work-1.png').prev__img
+            .work-slider__preview.slider
+                ul.preview.slider__list
+                    li.slider__item.slider__item_preview.active
+                        .slider__slide-wrap
+                            img(src='images/work-1.png').slider__img
+                    li.slider__item.slider__item_preview
+                        .slider__slide-wrap
+                            img(src='images/work-2.png').slider__img
+                    li.slider__item.slider__item_preview
+                        .slider__slide-wrap
+                            img(src='images/work-3.png').slider__img
+                    li.slider__item.slider__item_preview
+                        .slider__slide-wrap
+                            img(src='images/work-4.png').slider__img
+            ul.work-slider__controls.controls
+                li.controls__item.slider
+                    ul.prev.slider__list
+                        li.slider__item.slider__item_prev.active
+                            .slider__slide-wrap
+                                img(src='images/work-4.png').slider__img
+                        li.slider__item.slider__item_prev
+                            .slider__slide-wrap
+                                img(src='images/work-3.png').slider__img
+                        li.slider__item.slider__item_prev
+                            .slider__slide-wrap
+                                img(src='images/work-2.png').slider__img
+                        li.slider__item.slider__item_prev
+                            .slider__slide-wrap
+                                img(src='images/work-1.png').slider__img
                     a(href='#').controls__link.slide-prev
                         svg(width='45', height='30').controls__icon.controls__icon_prev
                             use(xlink:href='images/sprite.svg#arrow')
-                li.controls__item.controls__item_next
-                    ul.controls__next.next
-                        li.next__item.active
-                            .next__wrapper.slide-wrap
-                                img(src='images/work-2.png').next__img
-                        li.next__item
-                            .next__wrapper.slide-wrap
-                                img(src='images/work-3.png').next__img
-                        li.next__item
-                            .next__wrapper.slide-wrap
-                                img(src='images/work-4.png').next__img
-                        li.next__item
-                            .next__wrapper.slide-wrap
-                                img(src='images/work-1.png').next__img
+                li.controls__item.slider
+                    ul.next.slider__list
+                        li.slider__item.slider__item_next.active
+                            .slider__slide-wrap
+                                img(src='images/work-2.png').slider__img
+                        li.slider__item.slider__item_next
+                            .slider__slide-wrap
+                                img(src='images/work-3.png').slider__img
+                        li.slider__item.slider__item_next
+                            .slider__slide-wrap
+                                img(src='images/work-4.png').slider__img
+                        li.slider__item.slider__item_next
+                            .slider__slide-wrap
+                                img(src='images/work-1.png').slider__img
                     a(href='#').controls__link.slide-link.slide-next 
                         svg(width='45', height='30').controls__icon.controls__icon_next
                             use(xlink:href='images/sprite.svg#arrow')
