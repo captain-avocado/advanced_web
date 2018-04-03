@@ -10,7 +10,7 @@ export const slider = (function() {
     let counter = 1;
     let inProcess = false;
 
-    const moveSlide = function(slider, direction) {
+    const moveSlide = function(slider, blockDirection, slideDirection) {
         // console.log(counter);
 
         const items = Array.from(slider.children);
@@ -22,7 +22,7 @@ export const slider = (function() {
         //     counter = 4;
         // }
 
-        let innerCounter = (direction < 0) ? items.length - counter : counter;
+        let innerCounter = (blockDirection < 0) ? items.length - counter : counter;
         
         if (innerCounter >= items.length) {
             innerCounter = 0;
@@ -36,9 +36,9 @@ export const slider = (function() {
         // }
         // const reqItem = items[counter];
 
-        // if (slider === next) direction = -direction;
+        
         activeItem.style.transition = 'top .5s';
-        activeItem.style.top = direction * 100 + '%';
+        activeItem.style.top = slideDirection * 100 + '%';
 
         activeItem.addEventListener('transitionend', () => {
             activeItem.style.transition = '';
@@ -69,8 +69,8 @@ export const slider = (function() {
                 // if (counter >= prev.children.length) counter = 0;
                 if (!inProcess) {
                     inProcess = true;
-                    moveSlide(prev, 1);
-                    moveSlide(next, -1);
+                    moveSlide(prev, 1, 1);
+                    moveSlide(next, -1, -1);
                     counter++;
                 }
             });
@@ -79,8 +79,8 @@ export const slider = (function() {
                 e.preventDefault();
                 if (!inProcess) {
                     inProcess = true;
-                    moveSlide(next, 1);
-                    moveSlide(prev, -1);
+                    moveSlide(next, 1, -1);
+                    moveSlide(prev,-1, 1);
                     counter++;
                 }
             });
