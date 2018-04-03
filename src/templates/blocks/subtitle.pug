@@ -1,3 +1,6 @@
 mixin subtitle(text, className)
     .subtitle(class=`${className}__subtitle`)
-        .subtitle__text(class=`subtitle__text_${className}`)= text
+        if (className === 'descr')
+            #show-title.subtitle__text(class=`subtitle__text_${className}`)= text
+        else
+            .subtitle__text(class=`subtitle__text_${className}`)= text

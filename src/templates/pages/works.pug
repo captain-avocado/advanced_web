@@ -15,41 +15,33 @@ block content
             .work-slider__descr
                 .descr
                     +subtitle('Сайт школы онлайн образования', 'descr')
-                    .descr__tech html, css, javascript
+                    .descr__tech#show-tech html, css, javascript
                     .descr__show
-                        a(href='#').btn-show
+                        a(href='https://google.com').btn-show#show-link
                             svg(width='20', height='20').btn-show__icon
                                 use(xlink:href='images/sprite.svg#link')
                             .btn-show__text Посмотреть сайт
             .work-slider__preview.slider
                 ul.preview.slider__list
-                    li.slider__item.slider__item_preview.active
-                        .slider__slide-wrap
-                            img(src='images/work-1.png').slider__img
-                    li.slider__item.slider__item_preview
-                        .slider__slide-wrap
-                            img(src='images/work-2.png').slider__img
-                    li.slider__item.slider__item_preview
-                        .slider__slide-wrap
-                            img(src='images/work-3.png').slider__img
-                    li.slider__item.slider__item_preview
-                        .slider__slide-wrap
-                            img(src='images/work-4.png').slider__img
+                    - for (var i = 1; i <= 4; i++)
+                        li.slider__item.slider__item_preview
+                            .slider__slide-wrap
+                                img(src=`images/work-${i}.png`).slider__img
             ul.work-slider__controls.controls
                 li.controls__item.slider
                     ul.prev.slider__list
                         li.slider__item.slider__item_prev.active
                             .slider__slide-wrap
-                                img(src='images/work-4.png').slider__img
+                                img(src='images/work-4.png').slider__img.slider__img_prev
                         li.slider__item.slider__item_prev
                             .slider__slide-wrap
-                                img(src='images/work-3.png').slider__img
+                                img(src='images/work-3.png').slider__img.slider__img_prev
                         li.slider__item.slider__item_prev
                             .slider__slide-wrap
-                                img(src='images/work-2.png').slider__img
+                                img(src='images/work-2.png').slider__img.slider__img_prev
                         li.slider__item.slider__item_prev
                             .slider__slide-wrap
-                                img(src='images/work-1.png').slider__img
+                                img(src='images/work-1.png').slider__img.slider__img_prev
                     a(href='#').controls__link.slide-prev
                         svg(width='45', height='30').controls__icon.controls__icon_prev
                             use(xlink:href='images/sprite.svg#arrow')
@@ -57,16 +49,16 @@ block content
                     ul.next.slider__list
                         li.slider__item.slider__item_next.active
                             .slider__slide-wrap
-                                img(src='images/work-2.png').slider__img
+                                img(src='images/work-2.png').slider__img.slider__img_next
                         li.slider__item.slider__item_next
                             .slider__slide-wrap
-                                img(src='images/work-3.png').slider__img
+                                img(src='images/work-3.png').slider__img.slider__img_next
                         li.slider__item.slider__item_next
                             .slider__slide-wrap
-                                img(src='images/work-4.png').slider__img
+                                img(src='images/work-4.png').slider__img.slider__img_next
                         li.slider__item.slider__item_next
                             .slider__slide-wrap
-                                img(src='images/work-1.png').slider__img
+                                img(src='images/work-1.png').slider__img.slider__img_next
                     a(href='#').controls__link.slide-link.slide-next 
                         svg(width='45', height='30').controls__icon.controls__icon_next
                             use(xlink:href='images/sprite.svg#arrow')
