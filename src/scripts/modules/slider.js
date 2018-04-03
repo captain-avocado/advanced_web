@@ -10,17 +10,12 @@ export const slider = (function() {
     let counter = 1;
     let inProcess = false;
 
+    let fadeSliderCounter = 0;
+
     const moveSlide = function(slider, blockDirection, slideDirection) {
-        // console.log(counter);
 
         const items = Array.from(slider.children);
         const activeItem = items.filter(item => item.classList.contains('active'))[0];
-
-
-        // const innerCounter = (direction < 0) ? counter - 1 : counter + 1;
-        // if (counter <= 0) {
-        //     counter = 4;
-        // }
 
         let innerCounter = (blockDirection < 0) ? items.length - counter : counter;
         
@@ -31,12 +26,6 @@ export const slider = (function() {
         console.log('innerCounter = ' + innerCounter);
         const reqItem = items[innerCounter];
 
-        // if (counter >= items.length) {
-        //     counter = 0;
-        // }
-        // const reqItem = items[counter];
-
-        
         activeItem.style.transition = 'top .5s';
         activeItem.style.top = slideDirection * 100 + '%';
 
@@ -55,22 +44,37 @@ export const slider = (function() {
             inProcess = false;
         });
 
-
     };
  
 
+    const fadeSlide = function(slider, direction) {
+        
+        const items = Array.from(slider.children);
+        const activeItem = items.filter(item => item.classList.contains('active'))[0];
+
+        if (direction > 0) fadeSliderCounter++;
+        if (direction < 0) fadeSliderCounter--;
+
+        if (fadeSliderCounter < 0) fadeSliderCounter = 3;
+        if (fadeSliderCounter > 3) fadeSliderCounter = 0;
+
+        const reqItem = items[fadeSliderCounter];
+
+        // transitionend??
+        activeItem.classList.remove('active');
+        reqItem.classList.add('active');
+    };
 
     return {
         init() {
-            // let counter = 1;
             prevControl.addEventListener('click', (e) => {
                 e.preventDefault();
 
-                // if (counter >= prev.children.length) counter = 0;
                 if (!inProcess) {
                     inProcess = true;
                     moveSlide(prev, 1, 1);
                     moveSlide(next, -1, -1);
+                    fadeSlide(preview, -1);
                     counter++;
                 }
             });
@@ -81,6 +85,7 @@ export const slider = (function() {
                     inProcess = true;
                     moveSlide(next, 1, -1);
                     moveSlide(prev,-1, 1);
+                    fadeSlide(preview, 1);
                     counter++;
                 }
             });
