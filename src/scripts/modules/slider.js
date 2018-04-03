@@ -81,7 +81,7 @@ export const slider = (function() {
 
         const reqItem = items[counter];
 
-        // transitionend??
+        // transitionend?? FIX
         activeItem.classList.remove('active');
         reqItem.classList.add('active');
 
@@ -91,13 +91,9 @@ export const slider = (function() {
 
         title.innerHTML = info[counter].title;
         title.animate({
-            // keyframes
-            opacity: [0.5, 1],
             transform: ['scale(0.8)', 'scale(1.05)', 'scale(0.9)', 'scale(1)'],
         }, { 
-            // timing options
             duration: 300,
-            // iterations: Infinity
         });
         tech.innerHTML = info[counter].tech;
         link.href = info[counter].href;
