@@ -3,17 +3,13 @@ import { parallaxHero } from './modules/parallaxHero';
 import { blur } from './modules/blur';
 import { preloader } from './modules/preloader';
 import { slider } from './modules/slider';
-
+import scrollButtons from './modules/scrollButtons';
 
 preloader.start();
 
-
-
-
-
 window.onload = function() {
-    // preloader();
-    // preloader.classList.remove('active');
+    
+    scrollButtons();
     slider.init();
     burger();
     blur.set();
@@ -22,7 +18,9 @@ window.onload = function() {
 
 window.onscroll = function() {
     const wScroll = window.pageYOffset;
-    parallaxHero.init(wScroll);
+    if (wScroll <= 900) {
+        parallaxHero.init(wScroll);
+    }
 };
 
 window.onresize = function() {

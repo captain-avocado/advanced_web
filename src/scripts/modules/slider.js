@@ -22,7 +22,7 @@ export const slider = (function() {
             href: 'https://stackoverflow.com',
         },
         {
-            title: 'сайт кофоркинга',
+            title: 'сайт коворкинга',
             tech: 'html, css, javascriptик',
             href: 'https://loftschool.com',
         },

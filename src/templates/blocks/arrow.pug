@@ -1,4 +1,5 @@
-mixin arrow(className)
-    a(href='#', class=`arrow ${className}__arrow`)
+mixin arrow(className, id)
+
+    a(href='#', class=`arrow ${className}__arrow`, id=`${id || 'default'}`)
         svg(width='25', height='20').arrow__icon
             use(xlink:href='images/sprite.svg#arrow')

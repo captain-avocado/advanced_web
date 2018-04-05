@@ -23,7 +23,7 @@ mixin hero(className)
                             .intro__papers Статьи, которые я написал
                 else
                     +intro('hero')
-            +arrow('hero')
+            +arrow('hero', 'scroll-down')
             svg(class=`triangles_${className}`, viewBox='0 0 1200 130', preserveAspectRatio='none').hero__triangles.triangles
                     polygon(points='0,0 600,110 600,130 0,130').triangles__left
                     polygon(points='600,110 1200,0 1200,130 600,130').triangles__right
