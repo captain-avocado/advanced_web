@@ -1,15 +1,18 @@
 import burger from './modules/burger';
 import { parallaxHero } from './modules/parallaxHero';
 import { preloader } from './modules/preloader';
+import paperList from './modules/paperList';
 
 preloader.start();
 
 window.onload = function() {
+    // paperList();
     burger();
     setTimeout(preloader.hide, 500);
 };
 
 window.onscroll = function() {
     const wScroll = window.pageYOffset;
+    paperList(wScroll);
     parallaxHero.init(wScroll);
 };
