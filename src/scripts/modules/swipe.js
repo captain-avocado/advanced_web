@@ -1,12 +1,4 @@
-import burger from './modules/burger';
-import { parallaxHero } from './modules/parallaxHero';
-import { preloader } from './modules/preloader';
-import paperList from './modules/paperList';
-import paperListToggle from './modules/paperListToggle';
-// import scrollButtons from './modules/scrollButtons';
-
-
-function Swipe(elem, callback) {
+export function Swipe(elem, callback) {
     var self = this;
     this.callback = callback;
 
@@ -50,27 +42,4 @@ Swipe.prototype.touchHandler = function (event) {
             }
         }
     }
-};
-
-new Swipe(document.querySelector('.blog'), (e, dir) => {
-    
-    if (dir === 'right') {
-        console.log('right!!');
-    }
-
-});
-
-preloader.start();
-
-window.onload = function() {
-    // paperList();
-    paperListToggle();
-    burger();
-    setTimeout(preloader.hide, 500);
-};
-
-window.onscroll = function() {
-    const wScroll = window.pageYOffset;
-    paperList(wScroll);
-    parallaxHero.init(wScroll);
 };

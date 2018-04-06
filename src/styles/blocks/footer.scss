@@ -1,6 +1,10 @@
 .footer {
     background-color: rgba(#373e42, .6);
     color: $transp-white;
+    &.hidden {
+        display: none;
+    }
+
     &__row {
         display: flex;
         justify-content: space-between;

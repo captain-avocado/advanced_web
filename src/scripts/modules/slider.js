@@ -1,6 +1,5 @@
 export const slider = (function() {
     
-    const descr = document.querySelector('.descr');
     const preview = document.querySelector('.preview');
     const prev = document.querySelector('.prev');
     const next = document.querySelector('.next');

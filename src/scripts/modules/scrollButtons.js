@@ -4,7 +4,7 @@ export default function scrollTop() {
 
     function animateScroll(Y, scrollSpeed) {
         const targetScroll = Y;
-        let currentScroll = 0;
+        // let currentScroll = 0;
         let screenY = Math.floor(window.scrollY);
 
         //Scroll Down

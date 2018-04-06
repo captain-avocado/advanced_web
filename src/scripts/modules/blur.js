@@ -1,8 +1,8 @@
 export const blur = (function() {
     const wrapper = document.querySelector('.talk');
-    const form = document.querySelector('.form__input-area');
+    // const form = document.querySelector('.form__input-area');
     const forminit = document.querySelector('.form');
-    const bottom = document.querySelector('.talk__bottom-area');
+    // const bottom = document.querySelector('.talk__bottom-area');
     const container = document.querySelector('.container');
     const footer = document.querySelector('.footer');
     const blur = document.querySelector('.form__input-blur');

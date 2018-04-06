@@ -1,5 +1,7 @@
 export default function paperList(wScroll) {
 
+    const menuTrigger = document.querySelector('.adaptive-menu-trigger');
+
     const heroHeight = document.querySelector('.hero').clientHeight;
 
     const paperList = document.querySelector('.paper-list');
@@ -10,6 +12,7 @@ export default function paperList(wScroll) {
     const paperItems = papers.children;
 
     if (wScroll >= heroHeight) {
+        menuTrigger.style.display = '';
         paperListWrap.classList.add('fixed');
         papers.classList.add('fixed-neighbor');
 
@@ -27,11 +30,16 @@ export default function paperList(wScroll) {
         });
 
     } else {
-        paperListWrap.classList.remove('fixed');
-        papers.classList.remove('fixed-neighbor');
+        if (!paperList.classList.contains('active')) {
+            menuTrigger.style.display = 'none';
+        }
+        // paperListWrap.classList.remove('fixed');
+        // papers.classList.remove('fixed-neighbor');
+
+        // menuTrigger.classList.remove('active');
+        // paperListWrap.classList.remove('active');
+        // paperList.style.visibility = 'visible';
         // paperListItems[0].classList.remove('active');
     }
-
-
 
 }
