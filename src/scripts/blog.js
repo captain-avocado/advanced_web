@@ -1,8 +1,8 @@
 import burger from './modules/burger';
 import { parallaxHero } from './modules/parallaxHero';
 import { preloader } from './modules/preloader';
-import paperList from './modules/paperList';
-import paperListToggle from './modules/paperListToggle';
+import paperListModule from './modules/paperList';
+// import paperListToggle from './modules/paperListToggle';
 // import scrollButtons from './modules/scrollButtons';
 
 
@@ -52,10 +52,41 @@ Swipe.prototype.touchHandler = function (event) {
     }
 };
 
-new Swipe(document.querySelector('.blog'), (e, dir) => {
+const menuTrigger = document.querySelector('.adaptive-menu-trigger');
+
+const paperList = document.querySelector('.paper-list');
+const paperListWrap = paperList.parentElement;
+menuTrigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    menuTrigger.classList.toggle('active');
+    paperListWrap.classList.toggle('active');
+    if (paperListWrap.clientWidth < window.innerWidth*0.45 + 1) {
+        paperList.classList.remove('active');
+    }
+    // if (paperListWrap.clientWidth >= window.innerWidth*0.45) {
+    //     paperList.classList.add('active');
+    // }
+});
+
+paperListWrap.addEventListener('transitionend', () => {
+    console.log('helloe ');
+    if (paperListWrap.clientWidth) {
+    // setTimeout(() => {
+        paperList.classList.add('active');
+    // paperListWrap.style.transition = 'width 0';
+    // }, 5);
+    }        
     
+});
+
+new Swipe(document.querySelector('.blog'), (e, dir) => {
+    e.preventDefault();
     if (dir === 'right') {
-        console.log('right!!');
+        menuTrigger.classList.toggle('active');
+        paperListWrap.classList.toggle('active');
+        if (paperListWrap.clientWidth < window.innerWidth*0.45 + 1) {
+            paperList.classList.remove('active');
+        }
     }
 
 });
@@ -64,13 +95,13 @@ preloader.start();
 
 window.onload = function() {
     // paperList();
-    paperListToggle();
+    // paperListToggle();
     burger();
     setTimeout(preloader.hide, 500);
 };
 
 window.onscroll = function() {
     const wScroll = window.pageYOffset;
-    paperList(wScroll);
+    paperListModule(wScroll);
     parallaxHero.init(wScroll);
 };
