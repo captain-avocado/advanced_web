@@ -1,3 +1,5 @@
+import paperListToggle from './paperListToggle';
+
 export default function paperList(wScroll) {
 
     const menuTrigger = document.querySelector('.adaptive-menu-trigger');
@@ -11,12 +13,16 @@ export default function paperList(wScroll) {
     const papers = document.querySelector('.blog__papers');
     const paperItems = papers.children;
 
+    
+    
     if (wScroll >= heroHeight) {
-        menuTrigger.style.display = '';
+        paperListToggle(wScroll);
         paperListWrap.classList.add('fixed');
         papers.classList.add('fixed-neighbor');
+        menuTrigger.style.display = '';
+        
 
-        // paperListItems[0].classList.add('active');        
+        // подсветка нужных элементов списка
         Array.from(paperItems).forEach((item, i) => {
 
             const itemScrollTopBorder = item.offsetTop;
@@ -30,16 +36,17 @@ export default function paperList(wScroll) {
         });
 
     } else {
-        if (!paperList.classList.contains('active')) {
+        
+        if (!menuTrigger.classList.contains('active'))
             menuTrigger.style.display = 'none';
-        }
-        // paperListWrap.classList.remove('fixed');
-        // papers.classList.remove('fixed-neighbor');
+        menuTrigger.classList.remove('active');
+        paperListWrap.classList.remove('active');
+        paperList.classList.remove('active');
 
-        // menuTrigger.classList.remove('active');
-        // paperListWrap.classList.remove('active');
-        // paperList.style.visibility = 'visible';
-        // paperListItems[0].classList.remove('active');
+        if (window.innerWidth > 880) {
+            paperListWrap.classList.remove('fixed');
+            papers.classList.remove('fixed-neighbor');
+        }
     }
 
 }
