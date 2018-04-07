@@ -32,6 +32,9 @@
                     transform: translate(-50%, -50%);
                     z-index: 10;
                 
+                    -webkit-transition: left .5s;
+                    -moz-transition: left .5s;
+                    -o-transition: left .5s;
                     transition: left .5s;
                     
                     &.active {
