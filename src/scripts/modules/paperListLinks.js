@@ -2,8 +2,6 @@ import animateScroll from './animateScroll';
 
 export default function paperListLinks() {
 
-    const paperList = document.querySelector('.paper-list');
-    const paperListItems = paperList.children;
     const paperLinks = document.querySelectorAll('.paper-name__link');
 
     const papers = document.querySelector('.blog__papers');
