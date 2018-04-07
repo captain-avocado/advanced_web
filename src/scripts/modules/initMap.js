@@ -93,27 +93,4 @@ export const initMap = function(google) {
         fullscreenControl: false,
     });
 
-    // const mapBlock = document.querySelector('.map');
-    // const mapChildren = Array.from(mapBlock.children);
-    // const mapChildrenNoId = mapChildren.filter(item => item.id === '');
-    // console.log(mapChildrenNoId);
-    // mapBlock.addEventListener('click', (e) => {
-        
-    //     function isUnderAnotherBlocks() {
-    //         for (let i = 0; i < mapChildrenNoId.length; i++) {
-    //             if (mapChildrenNoId[i].contains(e.target)) {
-    //                 return true;
-    //             }
-    //         }
-    //         return false;
-    //     }
-
-    //     if (isUnderAnotherBlocks()) {
-    //         map.gestureHandling = 'none';
-    //     } else {
-    //         map.gestureHandling = 'greedy';
-    //     }
-
-    // });
-    
 };

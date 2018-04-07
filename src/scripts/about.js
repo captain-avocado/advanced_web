@@ -14,6 +14,7 @@ window.onload = function() {
     scrollButtons();
     burger();
     googleMaps.load(initMap);
+    googleMaps.KEY = 'AIzaSyDb-hSAeXf2JnxUCPnrIL8W54NMBW8rCRs';
     dragElement(document.getElementById(('contacts')));
     setTimeout(preloader.hide, 500);
 };

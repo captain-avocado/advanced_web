@@ -16,7 +16,7 @@ export default function scrollTop() {
             e.preventDefault();
             const heroHeight = document.querySelector('.hero').clientHeight;
             //погрешность свг?
-            animateScroll(heroHeight + 7, 10);
+            animateScroll(heroHeight + 10, 10);
         });
     }
 }
