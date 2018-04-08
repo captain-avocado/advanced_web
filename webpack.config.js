@@ -12,7 +12,8 @@ module.exports = {
       'index': paths.src + 'scripts/index.js',
       'blog': paths.src + 'scripts/blog.js',
       'works': paths.src + 'scripts/works.js',
-      'about': paths.src + 'scripts/about.js'
+      'about': paths.src + 'scripts/about.js',
+      'admin': paths.src + 'admin/main.js'
     },
     output: {
         path: paths.dist,
@@ -22,14 +23,35 @@ module.exports = {
       // new webpack.optimize.CommonsChunkPlugin({
       //     name: 'common'
       // }),
-      
-    //   new webpack.ProvidePlugin({
-    //     $: 'jquery',
-    //     jQuery: 'jquery'  
-    //   })
     ],
     module: {
         rules: [
+          {
+            test: /\.css$/,
+            use: ["vue-style-loader", "css-loader"]
+          },
+          {
+            test: /\.scss$/,
+            use: ["vue-style-loader", "css-loader", "sass-loader"]
+          },
+          {
+            test: /\.sass$/,
+            use: ["vue-style-loader", "css-loader", "sass-loader?indentedSyntax"]
+          },
+          {
+            test: /\.vue$/,
+            loader: "vue-loader",
+            options: {
+              loaders: {
+                scss: ["vue-style-loader", "css-loader", "sass-loader"],
+                sass: [
+                  "vue-style-loader",
+                  "css-loader",
+                  "sass-loader?indentedSyntax"
+                ]
+              }
+            }
+          },
           {
             test: /\.js$/,
             loader: 'babel-loader',
@@ -45,4 +67,11 @@ module.exports = {
           },
         ],
       },
+      resolve: {
+        alias: {
+          vue$: "vue/dist/vue.esm.js"
+        },
+        extensions: ["*", ".js", ".vue", ".json"]
+      },
+      // devtool: "#eval-source-map"
 };

@@ -1,12 +1,11 @@
 'use strict';
 const path = require('path');
+const del = require('del');
 
 const gulp = require('gulp');
 const $gp = require('gulp-load-plugins')();
 
 const browserSync = require('browser-sync').create();
-
-const del = require('del');
 
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config');
@@ -21,6 +20,7 @@ function clean() {
     return del(paths.dest);
 }
 
+//обработчик ошибок gulp
 const reportError = function(error) {
     const LINE = (error.line) ? 'LINE ' + (error.line) : '';
   
@@ -33,7 +33,6 @@ const reportError = function(error) {
 };
 
 function styles() {
-    // clean('styles');
     return gulp.src(paths.src + 'styles/main.scss')
     .pipe($gp.plumber({
         errorHandler: reportError
@@ -66,8 +65,7 @@ function styles() {
 }
 
 function templates() {
-    // clean('*.html');
-    return gulp.src(paths.src + 'templates/pages/*.pug')
+    return gulp.src('views/pages/*.pug')
     .pipe($gp.plumber({
         errorHandler: reportError
     }))
@@ -76,8 +74,7 @@ function templates() {
 }
 
 function scripts() {
-    // clean('scripts');
-    return gulp.src(paths.src + 'scripts/*.js')
+    return gulp.src([paths.src + 'scripts/*.js', paths.src + 'admin/main.js'])
     .pipe($gp.plumber({
         errorHandler: reportError
     }))
@@ -89,6 +86,7 @@ function scripts() {
     .pipe(gulp.dest(paths.dest + 'scripts/'));
 }
 
+//параметры svg-спрайта
 const svgConfig = {
     mode: {
         symbol: {
@@ -100,6 +98,7 @@ const svgConfig = {
     }
 };
 
+//создание svg-спрайта
 function sprite() {
     return gulp.src(paths.src + 'images/icons/*.svg')
         .pipe($gp.svgmin({
@@ -122,19 +121,20 @@ function sprite() {
         .pipe(gulp.dest(paths.dest + 'images'));
 }
 
+//перенос изображений
 function images() {
-    // clean('images');
     return gulp.src([paths.src + 'images/**/*.*', `!${paths.src}images/icons/*.svg`])
     // .pipe($gp.imagemin({ progressive: true }))
     .pipe($gp.rename({dirname: ''}))
     .pipe(gulp.dest(paths.dest + 'images'));
 }
 
+//перенос шрифтов
 function fonts() {
-    // clean('fonts');
     return gulp.src(paths.src + 'fonts/**').pipe(gulp.dest(paths.dest + 'fonts/'));
 }
 
+//перенос шрифтов fontAwesome
 function fontAwesome() {
     return gulp.src(['node_modules/font-awesome/fonts/*.woff2', 'node_modules/font-awesome/fonts/*.woff'])
       .pipe(gulp.dest(paths.dest + 'fonts/FontAwesome/'));
@@ -142,23 +142,38 @@ function fontAwesome() {
 
 function watch() {
     gulp.watch(paths.src + 'styles/**/*.scss', styles);
-    gulp.watch(paths.src + 'scripts/**/*.js', scripts);
-    gulp.watch(paths.src + 'templates/**/*.pug', templates);
+    gulp.watch([paths.src + 'scripts/**/*.js', paths.src + 'admin/main.js'], scripts);
+    gulp.watch('views/**/*.pug', templates);
+    // gulp.watch(`views/**/*`).on("change", browserSync.reload);
     gulp.watch(paths.src + 'images/icons/*.svg', sprite);
     gulp.watch(paths.src + 'images/**/*.*', images);
     gulp.watch(paths.src + 'fonts/**/*.*', fonts);
 }
 
+function nodemon(done) {
+    let started = false;
+    $gp.nodemon({
+        script: 'server.js',
+        watch: 'server.js'
+    })
+    .on('start', () => {
+        if (started) return;
+        done();
+        started = true;
+    });
+}
 
-function serve() {
+function browserSyncFunc(done) {
     browserSync.init({
+        proxy: 'http://localhost:3000',
+        port: 8080,
+        open: true,
         notify: false,
-        server: {
-            baseDir: paths.dest
-        }
     });
     browserSync.watch(paths.dest + '**/*.*', browserSync.reload);
 }
+
+
 
 gulp.task('clean', clean);
 gulp.task('styles', styles);
@@ -169,13 +184,34 @@ gulp.task('sprite', sprite);
 gulp.task('fonts', fonts);
 gulp.task('font-awesome', fontAwesome);
 gulp.task('watch', watch);
-gulp.task('serve', serve);
-//чекнуть соурсмапы
+
+gulp.task('nodemon', nodemon);
+gulp.task('browserSyncTask', browserSyncFunc);
+// gulp.task("nodemon", done => {
+//     let started = false;
+//     $gp
+//       .nodemon({
+//         script: "server.js",
+//         watch: "server.js"
+//       })
+//       .on("start", () => {
+//         if (started) return;
+//         done();
+//         started = true;
+//       });
+//   });
+
+gulp.task('server', gulp.series('nodemon', 'browserSyncTask'));
+
+  
+
 gulp.task('build', gulp.series(
     clean,
     gulp.parallel(styles, templates, sprite, images, scripts, fonts, fontAwesome)
 ));
+
 gulp.task('default', gulp.series(
-    gulp.task('build'),
-    gulp.parallel(watch, serve)
+    'build',
+    gulp.parallel('server', 'watch')
 ));
+

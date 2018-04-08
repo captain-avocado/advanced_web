@@ -33,7 +33,7 @@ block variables
                 text: 'На главную'
             },
             {
-                href: '#',
+                href: './admin.html',
                 spec: 'auth',
                 text: 'Войти'
             }
@@ -91,6 +91,6 @@ block content
                         ul.buttons
                             each item in loginBtnList
                                 li.buttons__item.buttons__item_login
-                                    a(href='#', class=`button button_${item.spec}`) #{item.text}
+                                    a(href=`${item.href}`, class=`button button_${item.spec}`) #{item.text}
         +credits('main')
     script(src="scripts/index.min.js")
