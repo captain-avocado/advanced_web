@@ -13,7 +13,7 @@ const webpackConfig = require('./webpack.config');
 
 const paths = {
     src: path.join(__dirname, 'src/'),
-    dest: path.join(__dirname, 'dest/')
+    dest: path.join(__dirname, 'dest/'),
 };
 
 function clean() {
@@ -27,63 +27,63 @@ const reportError = function(error) {
     $gp.notify.onError({
         title: `[${error.plugin}] ${LINE}`,
         message: error.message,
-        sound: 'Beep'
+        sound: 'Beep',
     })(error);
     this.emit('end');
 };
 
 function styles() {
     return gulp.src(paths.src + 'styles/main.scss')
-    .pipe($gp.plumber({
-        errorHandler: reportError
-    }))
-    .pipe($gp.sourcemaps.init())
-    .pipe($gp.sassGlob())
-    .pipe($gp.sass())
-    .pipe($gp.stylelint({
-        reporters: [
-          {formatter: 'string', console: true}
-        ],
-        fix: true
-      }))
-    .pipe($gp.groupCssMediaQueries())
-    .pipe($gp.autoprefixer({
-        browsers: ["last 2 versions"],
-        cascade: false
-    }))
-    .pipe($gp.cssUnit({
-        type: 'px-to-rem',
-        rootSize: 16
-    }))
-    .pipe($gp.cssnano({
-        reduceIdents: false
-    }))
-    .pipe($gp.rename({  suffix: '.min'  }))
-    .pipe($gp.sourcemaps.write('/'))
-    .pipe(gulp.dest(paths.dest + 'styles/'))
-    .pipe(browserSync.stream());
+        .pipe($gp.plumber({
+            errorHandler: reportError,
+        }))
+        .pipe($gp.sourcemaps.init())
+        .pipe($gp.sassGlob())
+        .pipe($gp.sass())
+        .pipe($gp.stylelint({
+            reporters: [
+                {formatter: 'string', console: true},
+            ],
+            fix: true,
+        }))
+        .pipe($gp.groupCssMediaQueries())
+        .pipe($gp.autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false,
+        }))
+        .pipe($gp.cssUnit({
+            type: 'px-to-rem',
+            rootSize: 16,
+        }))
+        .pipe($gp.cssnano({
+            reduceIdents: false,
+        }))
+        .pipe($gp.rename({  suffix: '.min'  }))
+        .pipe($gp.sourcemaps.write('/'))
+        .pipe(gulp.dest(paths.dest + 'styles/'))
+        .pipe(browserSync.stream());
 }
 
 function templates() {
     return gulp.src('views/pages/*.pug')
-    .pipe($gp.plumber({
-        errorHandler: reportError
-    }))
-    .pipe($gp.pug({ pretty: true }))
-    .pipe(gulp.dest(paths.dest));
+        .pipe($gp.plumber({
+            errorHandler: reportError,
+        }))
+        .pipe($gp.pug({ pretty: true }))
+        .pipe(gulp.dest(paths.dest));
 }
 
 function scripts() {
     return gulp.src([paths.src + 'scripts/*.js', paths.src + 'admin/main.js'])
-    .pipe($gp.plumber({
-        errorHandler: reportError
-    }))
-    .pipe($gp.sourcemaps.init())
-    .pipe($gp.webpack(webpackConfig, webpack))
+        .pipe($gp.plumber({
+            errorHandler: reportError,
+        }))
+        .pipe($gp.sourcemaps.init())
+        .pipe($gp.webpack(webpackConfig, webpack))
     // .pipe($gp.uglify())
     // .pipe($gp.concat('scripts.min.js'))
-    .pipe($gp.sourcemaps.write('/'))
-    .pipe(gulp.dest(paths.dest + 'scripts/'));
+        .pipe($gp.sourcemaps.write('/'))
+        .pipe(gulp.dest(paths.dest + 'scripts/'));
 }
 
 //параметры svg-спрайта
@@ -92,10 +92,10 @@ const svgConfig = {
         symbol: {
             sprite: '../sprite.svg',
             example: {
-                dest: '../tmp/spriteSvgDemo.html'
-            }
-        }
-    }
+                dest: '../tmp/spriteSvgDemo.html',
+            },
+        },
+    },
 };
 
 //создание svg-спрайта
@@ -103,8 +103,8 @@ function sprite() {
     return gulp.src(paths.src + 'images/icons/*.svg')
         .pipe($gp.svgmin({
             js2svg: {
-                pretty: true
-            }
+                pretty: true,
+            },
         }))
         .pipe($gp.cheerio({
             run: function($) {
@@ -113,8 +113,8 @@ function sprite() {
                 $('[style]').removeAttr('style');
             },
             parserOptions: {
-                xmlMode: true
-            }
+                xmlMode: true,
+            },
         }))
         .pipe($gp.replace('&gt;', '>'))
         .pipe($gp.svgSprite(svgConfig))
@@ -125,8 +125,8 @@ function sprite() {
 function images() {
     return gulp.src([paths.src + 'images/**/*.*', `!${paths.src}images/icons/*.svg`])
     // .pipe($gp.imagemin({ progressive: true }))
-    .pipe($gp.rename({dirname: ''}))
-    .pipe(gulp.dest(paths.dest + 'images'));
+        .pipe($gp.rename({dirname: ''}))
+        .pipe(gulp.dest(paths.dest + 'images'));
 }
 
 //перенос шрифтов
@@ -137,7 +137,7 @@ function fonts() {
 //перенос шрифтов fontAwesome
 function fontAwesome() {
     return gulp.src(['node_modules/font-awesome/fonts/*.woff2', 'node_modules/font-awesome/fonts/*.woff'])
-      .pipe(gulp.dest(paths.dest + 'fonts/FontAwesome/'));
+        .pipe(gulp.dest(paths.dest + 'fonts/FontAwesome/'));
 }
 
 function watch() {
@@ -155,9 +155,8 @@ function nodemon(done) {
     $gp.nodemon({
         script: 'server.js',
         watch: 'server.js',
-        env: { NODE_ENV: "development" },
-    })
-    .on('start', () => {
+        env: { NODE_ENV: 'development' },
+    }).on('start', () => {
         if (started) return;
         done();
         started = true;
@@ -166,7 +165,10 @@ function nodemon(done) {
 
 function browserSyncFunc(done) {
     browserSync.init({
-        proxy: 'http://localhost:3000',
+        server: {
+            baseDir: './dest',
+        },
+        // proxy: 'http://localhost:3000',
         port: 8080,
         open: true,
         notify: false,
@@ -195,8 +197,12 @@ gulp.task('build', gulp.series(
     gulp.parallel(styles, templates, sprite, images, scripts, fonts, fontAwesome)
 ));
 
+// module.exports.watch = watch;
+// module.exports.server = browserSyncFunc;
+
 gulp.task('default', gulp.series(
     'build',
-    gulp.parallel('server', 'watch')
+    // gulp.parallel(styles, templates, sprite, images, scripts, fonts, fontAwesome),
+    gulp.parallel(browserSyncFunc, watch)
 ));
 

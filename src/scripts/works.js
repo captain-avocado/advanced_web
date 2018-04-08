@@ -5,7 +5,7 @@ import { preloader } from './modules/preloader';
 import { slider } from './modules/slider';
 import scrollButtons from './modules/scrollButtons';
 
-preloader.start();
+// preloader.start();
 
 window.onload = function() {
     

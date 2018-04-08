@@ -1,24 +1,27 @@
 export const blur = (function() {
-    const wrapper = document.querySelector('.talk');
+    const wrapper = document.querySelector('.talk__img');
     // const form = document.querySelector('.form__input-area');
     const forminit = document.querySelector('.form');
     // const bottom = document.querySelector('.talk__bottom-area');
     const container = document.querySelector('.container');
     const footer = document.querySelector('.footer');
+    const talk_form = document.querySelector('.talk__form');
     const blur = document.querySelector('.form__input-blur');
     return {
         set() {
-            const blurWidth = wrapper.clientWidth;
+            const blurWidth = wrapper.offsetWidth;
             const blurHeight = wrapper.clientHeight;
-            console.log(blurWidth, blurHeight);
-            const posLeft = -forminit.offsetLeft - container.offsetLeft;
-            const posTop = -forminit.offsetTop + footer.clientHeight;
-            console.log(posLeft);
-            console.log(posTop);
+            const posLeft = -talk_form.offsetLeft;
+            const posTop = -talk_form.offsetTop;
+
+            const offsetImgTop = wrapper.offsetTop;
+            const offsetTop = posTop + offsetImgTop;
             const blurCSS = blur.style;
 
-            blurCSS.backgroundSize = `${blurWidth}px ${blurHeight}px`;
-            blurCSS.backgroundPosition = `${posLeft}px ${posTop}px`;
+
+            console.log(posLeft, posTop);
+            blurCSS.backgroundSize = `${blurWidth}px auto`;
+            blurCSS.backgroundPosition = `${posLeft}px ${offsetTop}px`;
         },
     };
 

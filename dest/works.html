@@ -8,11 +8,6 @@
     <title>Работы</title>
   </head>
   <body>
-    <div class="preloader active" id="preloader"><img class="preloader__bg" src="images/bg-preloader.jpg">
-      <svg class="preloader__svg" width="150" height="150" id="preloader__svg">
-        <use xlink:href="images/sprite.svg#preloader_round"></use>
-      </svg>
-    </div>
     <div class="section hero hero_my-works">
       <div class="hero__bg"><img class="hero__img" src="images/bg.jpg"/></div>
       <header class="hero__header header">
@@ -163,107 +158,106 @@
       </div>
     </section>
     <section class="section talk">
-      <div class="container container_talk">
-        <div class="talk__top-area">
-          <div class="title talk__title">
-            <div class="title__text title__text_talk">Что обо мне говорят</div>
-            <svg class="title__svg title__svg_talk">
-              <use xlink:href="images/sprite.svg#talk_header"></use>
-            </svg>
-          </div>
-          <ul class="talk__quotes quotes">
-            <li class="quotes__item">
-              <div class="quotes__symb"> <i class="fas fa-quote-left fa-2x"></i></div>
-              <div class="quotes__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
-              <div class="quotes__person person">
-                <div class="person__avatar"><img class="person__img" src="images/kovaldn.jpg"></div>
-                <div class="person__text">
-                  <div class="person__name">Ковальчук Дмитрий</div>
-                  <div class="person__position">основатель Loftschool</div>
-                </div>
-              </div>
-            </li>
-            <li class="quotes__item">
-              <div class="quotes__symb"> <i class="fas fa-quote-left fa-2x"></i></div>
-              <div class="quotes__text">Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!</div>
-              <div class="quotes__person person">
-                <div class="person__avatar"><img class="person__img" src="images/vova.jpg"></div>
-                <div class="person__text">
-                  <div class="person__name">Сабанцев Владимир</div>
-                  <div class="person__position">преподаватель</div>
-                </div>
-              </div>
-            </li>
-          </ul>
+      <div class="talk__bg"><img class="talk__img" src="../images/bg-works.jpg"></div>
+      <div class="talk__top-area">
+        <div class="title talk__title">
+          <div class="title__text title__text_talk">Что обо мне говорят</div>
+          <svg class="title__svg title__svg_talk">
+            <use xlink:href="images/sprite.svg#talk_header"></use>
+          </svg>
         </div>
-        <div class="talk__bottom-area">
-          <form class="form talk__form">
-            <div class="form__input-area">
-              <div class="form__input-blur"></div>
-              <div class="subtitle form__subtitle">
-                <div class="subtitle__text subtitle__text_form">Связаться со мной</div>
+        <ul class="talk__quotes quotes">
+          <li class="quotes__item">
+            <div class="quotes__symb"> <i class="fas fa-quote-left fa-2x"></i></div>
+            <div class="quotes__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
+            <div class="quotes__person person">
+              <div class="person__avatar"><img class="person__img" src="images/kovaldn.jpg"></div>
+              <div class="person__text">
+                <div class="person__name">Ковальчук Дмитрий</div>
+                <div class="person__position">основатель Loftschool</div>
               </div>
-              <input class="form__input form__input_name" type="text" placeholder="Имя">
-              <input class="form__input form__input_email" type="text" placeholder="Email">
-              <textarea class="form__text-area" name="textarea" placeholder="Ваше сообщение"></textarea>
             </div>
-            <div class="form__btn-area">
-              <ul class="buttons buttons_form">
-                <li class="buttons__item">
-                  <input class="button button_submit" type="submit" value="Отправить">
-                </li>
-                <li class="buttons__item">
-                  <input class="button button_reset" type="reset" value="Очистить">
-                </li>
-              </ul>
+          </li>
+          <li class="quotes__item">
+            <div class="quotes__symb"> <i class="fas fa-quote-left fa-2x"></i></div>
+            <div class="quotes__text">Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!</div>
+            <div class="quotes__person person">
+              <div class="person__avatar"><img class="person__img" src="images/vova.jpg"></div>
+              <div class="person__text">
+                <div class="person__name">Сабанцев Владимир</div>
+                <div class="person__position">преподаватель</div>
+              </div>
             </div>
-          </form><a class="arrow talk__arrow" href="#" id="scroll-top">
-            <svg class="arrow__icon" width="25" height="20">
-              <use xlink:href="images/sprite.svg#arrow"></use>
-            </svg></a>
-        </div>
+          </li>
+        </ul>
       </div>
-      <div class="talk__footer">
-        <footer class="footer talk__footer">
-          <div class="footer__row">
-            <div class="footer__col footer__col_left">
-              <div class="footer__menu-text">
-                <ul class="menu-text">
-                  <li class="menu-text__item"><a class="menu-text__btn" href="./works.html">Мои работы           </a></li>
-                  <li class="menu-text__item"><a class="menu-text__btn" href="./about.html">Обо мне           </a></li>
-                  <li class="menu-text__item"><a class="menu-text__btn" href="./blog.html">Блог           </a></li>
-                  <li class="menu-text__item"><a class="menu-text__btn" href="./index.html">Авторизация           </a></li>
-                </ul>
-              </div>
+      <div class="talk__bottom-area">
+        <form class="form talk__form">
+          <div class="form__input-blur"></div>
+          <div class="form__input-area">
+            <div class="subtitle form__subtitle">
+              <div class="subtitle__text subtitle__text_form">Связаться со мной</div>
             </div>
-            <div class="footer__col footer__col_right">
-              <ul class="socials">
-                <li class="socials__item socials__item_footer"><a class="socials__link social" href="https://vk.com">
-                    <svg class="social__icon social__icon_footer" width="25" height="25">
-                      <use xlink:href="images/sprite.svg#vk_round"></use>
-                    </svg></a></li>
-                <li class="socials__item socials__item_footer"><a class="socials__link social" href="https://github.com/">
-                    <svg class="social__icon social__icon_footer" width="25" height="25">
-                      <use xlink:href="images/sprite.svg#github_round"></use>
-                    </svg></a></li>
-                <li class="socials__item socials__item_footer"><a class="socials__link social" href="https://ru.linkedin.com/">
-                    <svg class="social__icon social__icon_footer" width="25" height="25">
-                      <use xlink:href="images/sprite.svg#linkedin_round"></use>
-                    </svg></a></li>
-              </ul>
-            </div>
+            <input class="form__input form__input_name" type="text" placeholder="Имя">
+            <input class="form__input form__input_email" type="text" placeholder="Email">
+            <textarea class="form__text-area" name="textarea" placeholder="Ваше сообщение"></textarea>
           </div>
-          <div class="footer__row">
-            <div class="footer__col footer__col_left">
-              <div class="footer__about-me">Я веб разработчик из Санкт-Петербурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool</div>
-            </div>
-            <div class="footer__col footer__col_right">
-              <div class="footer__credits">© Артем Калоев | Создано с любовью в Loftscool | 2018</div>
-            </div>
+          <div class="form__btn-area">
+            <ul class="buttons buttons_form">
+              <li class="buttons__item">
+                <input class="button button_submit" type="submit" value="Отправить">
+              </li>
+              <li class="buttons__item">
+                <input class="button button_reset" type="reset" value="Очистить">
+              </li>
+            </ul>
           </div>
-        </footer>
+        </form><a class="arrow talk__arrow" href="#" id="scroll-top">
+          <svg class="arrow__icon" width="25" height="20">
+            <use xlink:href="images/sprite.svg#arrow"></use>
+          </svg></a>
       </div>
     </section>
+    <div class="talk__footer">
+      <footer class="footer talk__footer">
+        <div class="footer__row">
+          <div class="footer__col footer__col_left">
+            <div class="footer__menu-text">
+              <ul class="menu-text">
+                <li class="menu-text__item"><a class="menu-text__btn" href="./works.html">Мои работы           </a></li>
+                <li class="menu-text__item"><a class="menu-text__btn" href="./about.html">Обо мне           </a></li>
+                <li class="menu-text__item"><a class="menu-text__btn" href="./blog.html">Блог           </a></li>
+                <li class="menu-text__item"><a class="menu-text__btn" href="./index.html">Авторизация           </a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__col footer__col_right">
+            <ul class="socials">
+              <li class="socials__item socials__item_footer"><a class="socials__link social" href="https://vk.com">
+                  <svg class="social__icon social__icon_footer" width="25" height="25">
+                    <use xlink:href="images/sprite.svg#vk_round"></use>
+                  </svg></a></li>
+              <li class="socials__item socials__item_footer"><a class="socials__link social" href="https://github.com/">
+                  <svg class="social__icon social__icon_footer" width="25" height="25">
+                    <use xlink:href="images/sprite.svg#github_round"></use>
+                  </svg></a></li>
+              <li class="socials__item socials__item_footer"><a class="socials__link social" href="https://ru.linkedin.com/">
+                  <svg class="social__icon social__icon_footer" width="25" height="25">
+                    <use xlink:href="images/sprite.svg#linkedin_round"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__row">
+          <div class="footer__col footer__col_left">
+            <div class="footer__about-me">Я веб разработчик из Санкт-Петербурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool</div>
+          </div>
+          <div class="footer__col footer__col_right">
+            <div class="footer__credits">© Артем Калоев | Создано с любовью в Loftscool | 2018</div>
+          </div>
+        </div>
+      </footer>
+    </div>
     <script src="scripts/works.min.js"></script>
   </body>
 </html>

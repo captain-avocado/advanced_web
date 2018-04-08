@@ -63,45 +63,46 @@ block content
                         svg(width='45', height='30').controls__icon.controls__icon_next
                             use(xlink:href='images/sprite.svg#arrow')
     section.section.talk
-        .container.container_talk
-            .talk__top-area
-                +title('Что обо мне говорят', 'talk')
-                ul.talk__quotes.quotes
-                    li.quotes__item
-                        .quotes__symb 
-                            i.fas.fa-quote-left.fa-2x
-                        .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                        .quotes__person.person
-                            .person__avatar
-                                img(src='images/kovaldn.jpg').person__img
-                            .person__text
-                                .person__name Ковальчук Дмитрий
-                                .person__position основатель Loftschool
-                    li.quotes__item
-                        .quotes__symb 
-                            i.fas.fa-quote-left.fa-2x
-                        .quotes__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
-                        .quotes__person.person
-                            .person__avatar
-                                img(src='images/vova.jpg').person__img
-                            .person__text
-                                .person__name Сабанцев Владимир
-                                .person__position преподаватель
-            .talk__bottom-area
-                form.form.talk__form
-                    .form__input-area
-                        .form__input-blur
-                        +subtitle('Связаться со мной', 'form')
-                        input.form__input.form__input_name(type="text", placeholder='Имя')
-                        input.form__input.form__input_email(type="text", placeholder='Email')
-                        textarea(name="textarea", placeholder='Ваше сообщение').form__text-area
-                    .form__btn-area
-                        ul.buttons.buttons_form
-                            li.buttons__item
-                                input(type="submit", value='Отправить').button.button_submit
-                            li.buttons__item
-                                input(type="reset", value='Очистить').button.button_reset
-                +arrow('talk', 'scroll-top')
-        .talk__footer
-            +footer('talk')
+        .talk__bg
+            img.talk__img(src="../images/bg-works.jpg")
+        .talk__top-area
+            +title('Что обо мне говорят', 'talk')
+            ul.talk__quotes.quotes
+                li.quotes__item
+                    .quotes__symb 
+                        i.fas.fa-quote-left.fa-2x
+                    .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .quotes__person.person
+                        .person__avatar
+                            img(src='images/kovaldn.jpg').person__img
+                        .person__text
+                            .person__name Ковальчук Дмитрий
+                            .person__position основатель Loftschool
+                li.quotes__item
+                    .quotes__symb 
+                        i.fas.fa-quote-left.fa-2x
+                    .quotes__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+                    .quotes__person.person
+                        .person__avatar
+                            img(src='images/vova.jpg').person__img
+                        .person__text
+                            .person__name Сабанцев Владимир
+                            .person__position преподаватель
+        .talk__bottom-area
+            form.form.talk__form
+                .form__input-blur
+                .form__input-area
+                    +subtitle('Связаться со мной', 'form')
+                    input.form__input.form__input_name(type="text", placeholder='Имя')
+                    input.form__input.form__input_email(type="text", placeholder='Email')
+                    textarea(name="textarea", placeholder='Ваше сообщение').form__text-area
+                .form__btn-area
+                    ul.buttons.buttons_form
+                        li.buttons__item
+                            input(type="submit", value='Отправить').button.button_submit
+                        li.buttons__item
+                            input(type="reset", value='Очистить').button.button_reset
+            +arrow('talk', 'scroll-top')
+    .talk__footer
+        +footer('talk')
     script(src="scripts/works.min.js")
