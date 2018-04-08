@@ -50,6 +50,7 @@ module.exports = {
                         "./src/styles/config/mixins.scss",
                         "./src/styles/config/variables.scss",
                         // "./src/styles/layout/fonts.scss"
+                        // "./src/styles/main.scss"
                       ]
                     }
                   }
@@ -78,6 +79,14 @@ module.exports = {
               outputPath: "../images/"
             }
           },
+          {
+            test: /\.(woff|woff2)$/,
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "../fonts/"
+            }
+          }
         ],
       },
       resolve: {

@@ -129,16 +129,16 @@ function images() {
     .pipe(gulp.dest(paths.dest + 'images'));
 }
 
-//перенос шрифтов
-function fonts() {
-    return gulp.src(paths.src + 'fonts/**').pipe(gulp.dest(paths.dest + 'fonts/'));
-}
+// //перенос шрифтов
+// function fonts() {
+//     return gulp.src(paths.src + 'fonts/**').pipe(gulp.dest(paths.dest + 'fonts/'));
+// }
 
-//перенос шрифтов fontAwesome
-function fontAwesome() {
-    return gulp.src(['node_modules/font-awesome/fonts/*.woff2', 'node_modules/font-awesome/fonts/*.woff'])
-      .pipe(gulp.dest(paths.dest + 'fonts/FontAwesome/'));
-}
+// //перенос шрифтов fontAwesome
+// function fontAwesome() {
+//     return gulp.src(['node_modules/font-awesome/fonts/*.woff2', 'node_modules/font-awesome/fonts/*.woff'])
+//       .pipe(gulp.dest(paths.dest + 'fonts/FontAwesome/'));
+// }
 
 function watch() {
     gulp.watch(paths.src + 'styles/**/*.scss', styles);
@@ -147,7 +147,7 @@ function watch() {
     // gulp.watch(`views/**/*`).on("change", browserSync.reload);
     gulp.watch(paths.src + 'images/icons/*.svg', sprite);
     gulp.watch(paths.src + 'images/**/*.*', images);
-    gulp.watch(paths.src + 'fonts/**/*.*', fonts);
+    // gulp.watch(paths.src + 'fonts/**/*.*', fonts);
 }
 
 function nodemon(done) {
@@ -181,8 +181,8 @@ gulp.task('templates', templates);
 gulp.task('scripts', scripts);
 gulp.task('images', images);
 gulp.task('sprite', sprite);
-gulp.task('fonts', fonts);
-gulp.task('font-awesome', fontAwesome);
+// gulp.task('fonts', fonts);
+// gulp.task('font-awesome', fontAwesome);
 gulp.task('watch', watch);
 
 gulp.task('nodemon', nodemon);
@@ -192,7 +192,7 @@ gulp.task('server', gulp.series('nodemon', 'browserSyncTask'));
 
 gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(styles, templates, sprite, images, scripts, fonts, fontAwesome)
+    gulp.parallel(styles, templates, sprite, images, scripts)
 ));
 
 gulp.task('default', gulp.series(

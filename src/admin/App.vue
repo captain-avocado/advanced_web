@@ -23,7 +23,7 @@ export default {
 <style lang="scss">
 
   @import './src/styles/layout/global.scss';
-  // @import './src/styles/layout/fonts.scss';
+  @import './src/styles/layout/fonts.scss';
 
   .admin {
     height: 100%;

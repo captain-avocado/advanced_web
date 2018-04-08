@@ -5,9 +5,7 @@ import paperList from './modules/paperList';
 import scrollButtons from './modules/scrollButtons';
 import paperListLinks from './modules/paperListLinks';
 
-if (window.innerWidth > 880) {
-    preloader.start();
-}
+preloader.start();
 
 window.onload = function() {
     scrollButtons();
