@@ -2,6 +2,7 @@ export const preloader = (function() {
 
     const preloader = document.getElementById('preloader');
     const preloadSvg = document.getElementById('preloader__svg');
+    const preloadText = document.getElementById('preloader__text');
     const footer = document.querySelector('.footer');
 
     const img = document.querySelectorAll('img');
@@ -9,8 +10,9 @@ export const preloader = (function() {
 
     const strokeDasharray = 440;
     let lengthSector = strokeDasharray / (imageNumber - 1);
+    let precentStep = Math.floor( 100 / (imageNumber - 1) );
     let currentSDO = lengthSector;
-
+    let currentPrecent = precentStep;
     return {
         start() {
             if (footer !== null) {
@@ -27,15 +29,20 @@ export const preloader = (function() {
                 img[i].addEventListener('load', () => {
                     // console.log(`currentSDO = ${currentSDO}`);
                     preloadSvg.style.strokeDashoffset = strokeDasharray - currentSDO;
+                    preloadText.innerHTML = `${currentPrecent}%`;
                     currentSDO += lengthSector;
+                    currentPrecent += precentStep;
                 });
             }
         },
         hide() {
-            if (footer !== null) {
-                footer.classList.remove('hidden');
-            }
-            preloader.classList.remove('active');
+            setTimeout(() => {
+                if (footer !== null) {
+                    footer.classList.remove('hidden');
+                }
+                //убрать прелоудер
+                preloader.classList.remove('active');
+            }, 500);
         },
     };
 

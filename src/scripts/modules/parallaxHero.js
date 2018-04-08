@@ -12,8 +12,10 @@ export const parallaxHero = (function() {
             style.webkitTransform = transformString;
         },
         init(wScroll) {
-            this.move(bg, wScroll, 40);
-            this.move(intro, wScroll, 3);
+            if (window.innerWidth > 880) {
+                this.move(bg, wScroll, 40);
+                this.move(intro, wScroll, 3);
+            }
         },
     };
 

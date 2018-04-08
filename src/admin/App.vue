@@ -2,7 +2,8 @@
   .admin  
     app-header
     tabs
-    about
+    .content
+      about
 </template>
 
 <script>
@@ -13,8 +14,8 @@ import about from './components/about';
 export default {
   components: {
     appHeader: header,
-    tabs: tabs,
-    about: about
+    tabs,
+    about
   }
 }
 </script>
@@ -35,6 +36,18 @@ export default {
   .content {
     flex: 1;
     background: url('~images/bg/bg.jpg') center center / cover no-repeat;
+    // position: relative;
+    // &:after {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   background-color: rgba($bg-white, .75);
+    // }
   }
+
 
 </style>
