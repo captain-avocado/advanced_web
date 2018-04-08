@@ -23,7 +23,7 @@ export default {
 <style lang="scss">
 
   @import './src/styles/layout/global.scss';
-  @import './src/styles/layout/fonts.scss';
+  // @import './src/styles/layout/fonts.scss';
 
   .admin {
     height: 100%;
@@ -36,18 +36,35 @@ export default {
   .content {
     flex: 1;
     background: url('~images/bg/bg.jpg') center center / cover no-repeat;
-    // position: relative;
-    // &:after {
-    //   content: '';
-    //   display: block;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   background-color: rgba($bg-white, .75);
-    // }
   }
 
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto/Roboto-Bold.woff2") format("woff2"),
+    url("../fonts/Roboto/Roboto-Bold.woff") format("woff");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto/Roboto-Light.woff2") format("woff2"),
+    url("../fonts/Roboto/Roboto-Light.woff") format("woff");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/Roboto/Roboto-Regular.woff") format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto/Roboto-Medium.woff2") format("woff2"),
+    url("../fonts/Roboto/Roboto-Medium.woff") format("woff");
+    font-weight: 500;
+}
 
 </style>
