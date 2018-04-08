@@ -19,11 +19,11 @@ module.exports = {
         path: paths.dist,
         filename: '[name].min.js'
     },
-    plugins: [
-      // new webpack.optimize.CommonsChunkPlugin({
-      //     name: 'common'
-      // }),
-    ],
+    // plugins: [
+    //   new webpack.optimize.CommonsChunkPlugin({
+    //       name: 'common'
+    //   }),
+    // ],
     module: {
         rules: [
           {
@@ -35,20 +35,25 @@ module.exports = {
             use: ["vue-style-loader", "css-loader", "sass-loader"]
           },
           {
-            test: /\.sass$/,
-            use: ["vue-style-loader", "css-loader", "sass-loader?indentedSyntax"]
-          },
-          {
             test: /\.vue$/,
             loader: "vue-loader",
             options: {
               loaders: {
-                scss: ["vue-style-loader", "css-loader", "sass-loader"],
-                sass: [
+                scss: [
                   "vue-style-loader",
                   "css-loader",
-                  "sass-loader?indentedSyntax"
-                ]
+                  "sass-loader",
+                  {
+                    loader: "sass-resources-loader",
+                    options: {
+                      resources: [
+                        "./src/styles/config/mixins.scss",
+                        "./src/styles/config/variables.scss",
+                        // "./src/styles/layout/fonts.scss"
+                      ]
+                    }
+                  }
+                ],
               }
             }
           },
@@ -65,13 +70,21 @@ module.exports = {
                 fix: true
             }
           },
+          {
+            test: /\.(png|jpg|gif)$/,
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]?[hash]"
+            }
+          }
         ],
       },
       resolve: {
         alias: {
-          vue$: "vue/dist/vue.esm.js"
+          vue$: "vue/dist/vue.esm.js",
+          images: path.resolve(__dirname, "src/images/")
         },
         extensions: ["*", ".js", ".vue", ".json"]
       },
-      // devtool: "#eval-source-map"
+      devtool: "#eval-source-map"
 };

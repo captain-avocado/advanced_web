@@ -1,14 +1,40 @@
 <template lang="pug">
-  app-title
+  .admin  
+    app-header
+    tabs
+    about
 </template>
 
 <script>
+import header from './components/header';
+import tabs from './components/tabs';
+import about from './components/about';
+
 export default {
   components: {
-    appTitle: require('./components/title').default
+    appHeader: header,
+    tabs: tabs,
+    about: about
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+
+  @import './src/styles/layout/global.scss';
+  // @import './src/styles/layout/fonts.scss';
+
+  .admin {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+  }
+
+  .content {
+    flex: 1;
+    background: url('~images/bg/bg.jpg') center center / cover no-repeat;
+  }
+
 </style>

@@ -80,7 +80,7 @@ function scripts() {
     }))
     .pipe($gp.sourcemaps.init())
     .pipe($gp.webpack(webpackConfig, webpack))
-    .pipe($gp.uglify())
+    // .pipe($gp.uglify())
     // .pipe($gp.concat('scripts.min.js'))
     .pipe($gp.sourcemaps.write('/'))
     .pipe(gulp.dest(paths.dest + 'scripts/'));
@@ -142,7 +142,7 @@ function fontAwesome() {
 
 function watch() {
     gulp.watch(paths.src + 'styles/**/*.scss', styles);
-    gulp.watch([paths.src + 'scripts/**/*.js', paths.src + 'admin/main.js'], scripts);
+    gulp.watch([paths.src + 'scripts/**/*.js', paths.src + 'admin/**/*.*'], scripts);
     gulp.watch('views/**/*.pug', templates);
     // gulp.watch(`views/**/*`).on("change", browserSync.reload);
     gulp.watch(paths.src + 'images/icons/*.svg', sprite);
@@ -154,7 +154,8 @@ function nodemon(done) {
     let started = false;
     $gp.nodemon({
         script: 'server.js',
-        watch: 'server.js'
+        watch: 'server.js',
+        env: { NODE_ENV: "development" },
     })
     .on('start', () => {
         if (started) return;
@@ -174,7 +175,6 @@ function browserSyncFunc(done) {
 }
 
 
-
 gulp.task('clean', clean);
 gulp.task('styles', styles);
 gulp.task('templates', templates);
@@ -187,23 +187,8 @@ gulp.task('watch', watch);
 
 gulp.task('nodemon', nodemon);
 gulp.task('browserSyncTask', browserSyncFunc);
-// gulp.task("nodemon", done => {
-//     let started = false;
-//     $gp
-//       .nodemon({
-//         script: "server.js",
-//         watch: "server.js"
-//       })
-//       .on("start", () => {
-//         if (started) return;
-//         done();
-//         started = true;
-//       });
-//   });
-
 gulp.task('server', gulp.series('nodemon', 'browserSyncTask'));
 
-  
 
 gulp.task('build', gulp.series(
     clean,
