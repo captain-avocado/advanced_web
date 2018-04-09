@@ -177,6 +177,11 @@ function browserSyncFunc(done) {
 }
 
 
+function dataToDest() {
+    return gulp.src(paths.src + 'admin/data.json')
+    .pipe(gulp.dest(paths.dest));
+}
+
 gulp.task('clean', clean);
 gulp.task('styles', styles);
 gulp.task('templates', templates);
@@ -194,7 +199,7 @@ gulp.task('server', gulp.series('nodemon', 'browserSyncTask'));
 
 gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(styles, templates, sprite, images, scripts, fonts, fontAwesome)
+    gulp.parallel(styles, templates, sprite, images, scripts, fonts, fontAwesome, dataToDest)
 ));
 
 gulp.task('default', gulp.series(

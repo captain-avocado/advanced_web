@@ -5,9 +5,11 @@
             v-for='skillType in skillsTypes'
             :key='skillType'
             :skillType='skillType'
+            :skills='skills'
         )
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex';
 import skillsList from './skillsList';
 
 export default {
@@ -16,7 +18,6 @@ export default {
     },
     data() {
         return {
-            skills: [],
             skillsTypes: [
                 'frontend',
                 'backend',
@@ -24,14 +25,21 @@ export default {
             ]
         }
     },
-    // mounted() {
-    //     fetch('')
-    // }
+    computed: {
+        ...mapGetters(['skills'])
+    },
+    methods: {
+        ...mapActions(['fetchSkills'])
+    },
+    mounted() {
+        //add preloader
+        this.fetchSkills();
+    }
 }
 </script>
 <style lang="scss" scoped>
-    .about-section {
-        height: 100%;
-        background-color: rgba($bg-white, .75);
-    }
+    // .about-section {
+    //     // height: 100%;
+    //     // background-color: rgba($bg-white, .75);
+    // }
 </style>
