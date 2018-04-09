@@ -96,5 +96,4 @@ module.exports = {
         },
         extensions: ["*", ".js", ".vue", ".json"]
       },
-      devtool: "#eval-source-map"
 };

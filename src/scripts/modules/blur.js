@@ -1,27 +1,25 @@
 export const blur = (function() {
-    const wrapper = document.querySelector('.talk');
-    // const form = document.querySelector('.form__input-area');
-    const forminit = document.querySelector('.form');
-    const bottom = document.querySelector('.talk__bottom-area');
-    const container = document.querySelector('.container');
-    const footer = document.querySelector('.footer');
+    const wrapper = document.querySelector('.talk__img');
+    
+    const talk_form = document.querySelector('.talk__form');
     const blur = document.querySelector('.form__input-blur');
-
-
-
+    
     return {
         set() {
-            const blurWidth = wrapper.clientWidth;
-            const blurHeight = wrapper.clientHeight;
-            console.log(blurWidth, blurHeight);
-            const posLeft = -forminit.offsetLeft;
-            const posTop = -forminit.offsetTop;
-            console.log(posLeft);
-            console.log(posTop);
+            const blurWidth = wrapper.offsetWidth;
+
+            const posLeft = -talk_form.offsetLeft;
+            const posTop = -talk_form.offsetTop;
+
+            const offsetImgTop = wrapper.offsetTop;
+            
+            const offsetLeft = posLeft + talk_form.clientWidth * .05;
+            const offsetTop = posTop + offsetImgTop + talk_form.clientHeight * .05;
+
             const blurCSS = blur.style;
 
-            blurCSS.backgroundSize = `${blurWidth}px ${blurHeight}px`;
-            blurCSS.backgroundPosition = `${posLeft}px ${posTop}px`;
+            blurCSS.backgroundSize = `${blurWidth}px auto`;
+            blurCSS.backgroundPosition = `${offsetLeft}px ${offsetTop}px`;
         },
     };
 

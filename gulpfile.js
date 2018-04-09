@@ -131,13 +131,15 @@ function images() {
 
 //перенос шрифтов
 function fonts() {
-    return gulp.src(paths.src + 'fonts/**').pipe(gulp.dest(paths.dest + 'fonts/'));
+    return gulp.src([paths.src + 'fonts/**/*.*'])
+    .pipe($gp.rename({dirname: ''}))
+    .pipe(gulp.dest(paths.dest + 'fonts'));
 }
 
 //перенос шрифтов fontAwesome
 function fontAwesome() {
     return gulp.src(['node_modules/font-awesome/fonts/*.woff2', 'node_modules/font-awesome/fonts/*.woff'])
-      .pipe(gulp.dest(paths.dest + 'fonts/FontAwesome/'));
+      .pipe(gulp.dest(paths.dest + 'fonts/'));
 }
 
 function watch() {
