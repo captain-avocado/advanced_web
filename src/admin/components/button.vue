@@ -1,5 +1,5 @@
 <template lang="pug">
-    .button(type="button" @click="")
+    .button
         slot Кнопка
 </template>
 <script>

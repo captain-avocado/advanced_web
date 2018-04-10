@@ -1,12 +1,12 @@
 <template lang="pug">
-    .modal
+    transition(name="modal")
         .modal-mask
-            .modal-container
-                .modal-text
-                    slot Текст модального окна
-                app-button.modal-close(
-                    @click="$emit('close')"
-                ) Закрыть
+            .modal-wrapper
+                .modal-container
+                    .modal-text
+                        slot Текст модального окна
+                    .modal-close(@click="$emit('close')")
+                        app-button Закрыть
 </template>
 <script>
 import appButton from './button';
@@ -14,13 +14,7 @@ import appButton from './button';
 export default {
     components: {
         appButton
-    },
-    // methods: {
-    //     closi() {
-    //         console.log('javik')
-    //         $emit('close');
-    //     }
-    // }
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -33,11 +27,20 @@ export default {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, .5);
-        // display: table;
-        transition: opacity .3s ease;
+        transition: opacity .5s ease;
+    }
+
+    .modal-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .modal-container {
+
+        transition: opacity .5s ease, transform .5s ease;
+
         padding: 15px 40px;
         width: fit-content;
         background-color: $white;

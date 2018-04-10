@@ -8,9 +8,8 @@
                 :skillType='skillType'
                 :skills='skills'
             )
-        app-button(
-            @click="showModal = true"
-        ) Сохранить
+        .button(@click="showModal = true")
+            app-button Сохранить
         modal(
             v-if="showModal"
             @close="showModal = false"
@@ -42,7 +41,10 @@ export default {
         ...mapGetters(['skills'])
     },
     methods: {
-        ...mapActions(['fetchSkills'])
+        ...mapActions(['fetchSkills']),
+        showModalki: function () {
+            alert('eeeee')
+        }
     },
     mounted() {
         //add preloader
