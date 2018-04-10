@@ -1,6 +1,6 @@
 <template lang="pug">
     .skill-input
-        input(
+        input.precents-area(
             type="text"
             v-model='skillName'
             @keydown.enter="addNewSkill"
@@ -50,6 +50,11 @@ export default {
     .error {
         border: 1px solid crimson;
         outline: none;
+    }
+
+    .precents-area {
+        padding: 8px;
+        color: $text-dark;
     }
 </style>
 

@@ -1,8 +1,8 @@
 <template lang="pug">
     .skills-list
         .skill-title {{ skillType }}
-        table
-            skillsItem(
+        table.skill-table
+            skillsItem.skills-item(
                 v-for='skill in skills'
                 v-if='checkSkillType(skillType) === skill.type'
                 :key="skill.id"
@@ -39,6 +39,27 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
+    .skills-list {
+        // width: 30%;
+        min-width: 300px;
+        margin-bottom: 10%;
+        &:not(:nth-of-type(2n)) {
+            margin-right: 15%;
+        }
+    }
+
+    .skill-title {
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    .skill-table {
+        padding-left: 20px;
+        width: 100%;
+    }
+
+
 
 </style>
 

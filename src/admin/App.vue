@@ -36,6 +36,7 @@ export default {
   .content {
     flex: 1;
     background: url('~images/bg/bg.jpg') center center / cover no-repeat;
+    color: $text-dark;
   }
 
 
