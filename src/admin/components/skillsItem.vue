@@ -2,13 +2,20 @@
   tr.skill-row
     td.skill-name {{skill.name}}
     td
-        input.percents-area(type='text' @focus='toggleRemoveButton()' :value='skill.percents')
+        .skill-num
+            input.percents-area(type='text' @click='toggleRemoveButton()' :value='skill.percents')
+            .precent %
     td
-        button(type='button' v-show='isOpen' @click='removeExistedSkill(skill.id)') Удалить
+        .button(v-show='isOpen' @click='removeExistedSkill(skill.id)')
+            app-button Удалить
 </template>
 <script>
 import { mapMutations } from 'vuex';
+import appButton from './button';
 export default {
+    components: {
+        appButton
+    },
     data() {
         return {
             isOpen: false
@@ -32,6 +39,9 @@ export default {
 
     .skill-row {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
     }
 
     .skill-name {
@@ -39,19 +49,23 @@ export default {
     }
 
     .percents-area {
-        padding: 8px;
-        font-size: 16px;
-        text-align: center;
-        border-radius: 2px;
         width: 45px;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 2px;
         color: $text-dark;
-        // &:after {
-        //     content: '%';
-        //     display: block;
-
-        // }
     }
     
+    .skill-num {
+        display: flex;
+        align-items: center;
+    }
+
+    .precent {
+        margin: 0 10px 0 5px;
+    }
+
 </style>
 
 

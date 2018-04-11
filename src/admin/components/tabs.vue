@@ -12,12 +12,16 @@ export default {
         return {
             tabs: [
                 {
-                    name: 'tab 1',
+                    name: 'Обо мне',
                     href:'/'
                 },
                 {
-                    name: 'tab 2',
-                    href:'/page/2'
+                    name: 'Блог',
+                    href:'/blog'
+                },
+                {
+                    name: 'Мои работы',
+                    href:'/works'
                 }
             ]
         }

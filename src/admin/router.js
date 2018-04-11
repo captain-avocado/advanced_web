@@ -4,7 +4,8 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import About from './components/about.vue';
-import Page from './components/page.vue';
+import Blog from './components/blog.vue';
+import Works from './components/works.vue';
 
 const routes = [
     {
@@ -12,8 +13,12 @@ const routes = [
         component: About,
     },
     {
-        path: '/page/:pageId',
-        component: Page,
+        path: '/blog',
+        component: Blog,
+    },
+    {
+        path: '/works',
+        component: Works,
     },
 ];
 

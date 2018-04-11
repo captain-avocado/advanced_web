@@ -1,6 +1,6 @@
 <template lang="pug">
     .about-section
-        .title Страница "Обо мне"
+        app-title  Страница "Обо мне"
         .skill-tables
             skills-list(
                 v-for='skillType in skillsTypes'
@@ -20,12 +20,14 @@ import { mapActions, mapGetters } from 'vuex';
 import skillsList from './skillsList';
 import appButton from './button';
 import modal from './modal';
+import appTitle from './title';
 
 export default {
     components: {
         skillsList,
         appButton,
-        modal
+        modal,
+        appTitle
     },
     data() {
         return {
@@ -53,19 +55,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    .title {
-        font-size: 21px;
-        font-weight: 500;
-        margin-bottom: 40px;
-    }
-    .about-section {
-        height: 100%;
-        background-color: rgba($bg-white, .75);
-        padding: 40px 20px;
-    }
+    
     .skill-tables {
         display: flex;
         width: 75%;
         flex-wrap: wrap;
+    }
+
+    .button {
+        width: fit-content;
     }
 </style>

@@ -43,7 +43,7 @@ export default {
     .skills-list {
         // width: 30%;
         min-width: 300px;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
         &:not(:nth-of-type(2n)) {
             margin-right: 15%;
         }

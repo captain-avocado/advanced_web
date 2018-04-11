@@ -1,9 +1,10 @@
 <template lang="pug">
-  .admin  
+  .admin
     app-header
     tabs
     .content
-      router-view
+      .section
+        router-view
 </template>
 
 <script>
@@ -28,8 +29,8 @@ export default {
   .admin {
     // height: 100%;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     font-family: 'Roboto';
   }
 
@@ -39,5 +40,10 @@ export default {
     color: $text-dark;
   }
 
+  .section {
+          height: 100%;
+          background-color: rgba($bg-white, .75);
+          padding: 40px 20px;
+      }
 
 </style>

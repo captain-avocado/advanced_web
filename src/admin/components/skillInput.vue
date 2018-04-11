@@ -1,18 +1,25 @@
 <template lang="pug">
-    .skill-input
-        input.precents-area(
-            type="text"
-            v-model='skillName'
-            @keydown.enter="addNewSkill"
-            :class="{error: validation.hasError('skillName')}"
-        )
-        button(type="button" @click="addNewSkill") Сохранить
+    .input-wrap
+        .skill-input
+            input.precents-area(
+                type="text"
+                v-model='skillName'
+                @keydown.enter="addNewSkill"
+                :class="{error: validation.hasError('skillName')}"
+            )
+            .button(@click="addNewSkill")
+                app-button Добавить
         .error-message {{ validation.firstError('skillName') }}
 </template>
 <script>
 import { mapMutations } from 'vuex';
 import { Validator } from 'simple-vue-validator';
+import appButton from './button';
+
 export default {
+    components: {
+        appButton
+    },
     mixins: [require('simple-vue-validator').mixin],
     validators: {
         skillName: value => {
@@ -47,14 +54,22 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
+    .skill-input {
+        display: flex;
+    }
+    
     .error {
         border: 1px solid crimson;
         outline: none;
     }
 
     .precents-area {
-        padding: 8px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 2px;
         color: $text-dark;
+        margin-right: auto;
     }
 </style>
 
