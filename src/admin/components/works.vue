@@ -120,6 +120,9 @@ export default {
     .subtitle {
         font-weight: 700;
         margin-bottom: 2%;
+        @include phones {
+            margin-bottom: 5%;
+        }
     }
 
     .button {

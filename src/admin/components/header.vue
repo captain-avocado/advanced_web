@@ -12,6 +12,9 @@
     background: $bg-green;
     align-items: center;
     color: $white;
+    // @include phones {
+    //   padding: 15px;
+    // }
   }
 
   .title {
@@ -37,6 +40,7 @@
     }
     @include phones {
       font-size: 12px;
+      text-align: right;
     }
   }
   
