@@ -58,7 +58,7 @@ export default {
     
     .skill-tables {
         display: flex;
-        width: 75%;
+        // width: 75%;
         flex-wrap: wrap;
     }
 

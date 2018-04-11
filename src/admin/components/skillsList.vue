@@ -42,11 +42,13 @@ export default {
 
     .skills-list {
         // width: 30%;
-        min-width: 300px;
+        // min-width: 300px;
         margin-bottom: 5%;
-        &:not(:nth-of-type(2n)) {
-            margin-right: 15%;
-        }
+        margin-right: 5%;
+        flex: 1;
+        // &:not(:nth-of-type(2n)) {
+        //     margin-right: 15%;
+        // }
     }
 
     .skill-title {

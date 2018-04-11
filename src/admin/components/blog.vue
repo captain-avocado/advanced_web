@@ -2,12 +2,21 @@
     .blog-section
         app-title Страница "Блог"
         .subtitle Добавить запись
-        .inputs(:class="{error: validation.hasError('paperDate'), emptyError: validation.hasError('paperName')}")
+        .inputs(:class="{dateError: validation.hasError('paperDate'), nameError: validation.hasError('paperName'), textError: validation.hasError('paperText')}")
             input.input.name(type="text" placeholder="Название" v-model="paperName")
-            <div class="message">{{ validation.firstError('paperName') }}</div>
+            .message(
+                :class="{error: validation.hasError('paperName')}"
+            ) {{ validation.firstError('paperName') }}
+            
             input.input.date(type="text" placeholder="Дата" v-model="paperDate")
-            <div class="message">{{ validation.firstError('paperDate') }}</div>
+            .message(
+                :class="{error: validation.hasError('paperDate')}"
+            ) {{ validation.firstError('paperDate') }}
             textarea.input.textarea(v-model="paperText")
+            .message(
+                :class="{error: validation.hasError('paperText')}"
+            ) {{ validation.firstError('paperText') }}
+
         .button(@click="addNewPaper")
             app-button Сохранить
         modal(
@@ -16,6 +25,7 @@
         ) Сообщение отправлено
 </template>
 <script>
+import { mapMutations } from 'vuex';
 import { Validator } from 'simple-vue-validator';
 import appTitle from './title';
 import appButton from './button';
@@ -30,12 +40,15 @@ export default {
     mixins: [require('simple-vue-validator').mixin],
     validators: {
         paperName: value => {
-            return Validator.value(value).minLength(5, 'Заполните поле')
+            return Validator.value(value).required('Заполните поле');
         },
         paperDate: value => {
             const reg = /^(0?[1-9]|[12][0-9]|3[01])[\.](0?[1-9]|1[012])[\.]\d{4}$/;
-            return Validator.value(value).regex(reg, 'Поле заполнено некорректно');
-        }
+            return Validator.value(value).required('Заполните поле').regex(reg, 'Поле заполнено некорректно');
+        },
+        paperText: value => {
+            return Validator.value(value).required('Заполните поле');
+        },
     },
     data() {
         return {
@@ -46,18 +59,38 @@ export default {
         }
     },
     methods: {
+        ...mapMutations(['addPaper']),
         addNewPaper() {
-            const paper = {
+            const newPaper = {
                 name: this.paperName,
                 date: this.paperDate,
                 text: this.paperText
             };
-            console.log(paper)
+            this.$validate().then(success => {
+                if (!success) return;
+                this.addPaper(newPaper);
+                this.paperName = "";
+                this.paperDate = "";
+                this.paperText = "";
+                this.validation.reset();
+                this.showModal = true;
+            })
         }
     }
 }
 </script>
 <style lang="scss" scoped>
+
+    .message {
+        font-size: 14px;
+        height: 16px;
+        opacity: 0;
+        transition: opacity 1s;
+        &.error {
+            opacity: 1;
+        }
+        
+    }
 
     .subtitle {
         font-weight: 700;
@@ -75,7 +108,7 @@ export default {
     .textarea {
         width: 100%;
         resize: none;
-        height: 200px;
+        height: 150px;
     }
 
     .input {

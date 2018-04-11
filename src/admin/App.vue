@@ -29,8 +29,8 @@ export default {
   .admin {
     // height: 100%;
     height: 100vh;
-    // display: flex;
-    // flex-direction: column;
+    display: flex;
+    flex-direction: column;
     font-family: 'Roboto';
   }
 

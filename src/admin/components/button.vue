@@ -10,7 +10,7 @@ export default {
 <style lang="scss" scoped>
 
     .button {
-        padding: 10px;
+        padding: 8px;
         background-color: $bg-green;
         width: fit-content;
         border-radius: 4px;

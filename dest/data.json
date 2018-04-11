@@ -31,7 +31,7 @@
     },
     {
       "id": 6,
-      "name": "Bower",
+      "name": "Webpack",
       "percents": 60,
       "type": 2
     },
