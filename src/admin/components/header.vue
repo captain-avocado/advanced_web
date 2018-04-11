@@ -17,6 +17,12 @@
   .title {
     font-size: 28px;
     font-weight: 500;
+    @include tablets {
+      font-size: 22px;
+    }
+    @include phones {
+      font-size: 14px;
+    }
   }
 
   .return-back {
@@ -25,6 +31,12 @@
     text-decoration: underline;
     &:hover {
       color: $white;
+    }
+    @include tablets {
+      font-size: 20px;
+    }
+    @include phones {
+      font-size: 12px;
     }
   }
   

@@ -84,6 +84,10 @@ export default {
     .inputs {
         display: flex;
         flex-direction: column;
+        width: 25%;
+        @include tablets {
+            width: 50%;
+        }
     }
 
     .input {
@@ -95,8 +99,6 @@ export default {
         outline: none;
         margin-bottom: 2%;
         background-color: $white;
-
-        width: 25%;
     }
 
     .message {

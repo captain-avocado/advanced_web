@@ -60,6 +60,13 @@ export default {
         display: flex;
         // width: 75%;
         flex-wrap: wrap;
+        @include tablets {
+            flex-direction: column;
+            width: 50%;
+        }
+        @include phones {
+            width: 100%;
+        }
     }
 
     .button {

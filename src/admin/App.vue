@@ -44,6 +44,14 @@ export default {
           height: 100%;
           background-color: rgba($bg-white, .75);
           padding: 40px 20px;
+          @include tablets {
+            padding: 30px 20px;
+          }
       }
+  html {
+    @include phones {
+      font-size: 13px;
+    }
+  }
 
 </style>

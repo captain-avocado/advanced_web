@@ -99,6 +99,9 @@ export default {
 
     .inputs {
         width: 50%;
+        @include tablets {
+            width: 75%;
+        }
     }
 
     .name, .date {

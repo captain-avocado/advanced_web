@@ -32,17 +32,29 @@ export default {
     .list {
         display: flex;
         background-color: $bg-beige;
+        @include phones {
+            flex-direction: column;
+        }
     }
 
     .item {
+        @include tablets {
+            flex: 1;
+        }
         border-right: 2px solid $white;
     }
 
     .link {
         padding: 25px 70px;
+        @include phones {
+            padding: 10px 20px;
+        }
         display: block;
+        width: 100%;
+        height: 100%;
         color: $text-dark;
         text-transform: uppercase;
+        text-align: center;
         &:hover {
             background-color: $white;
             color: $bg-green;

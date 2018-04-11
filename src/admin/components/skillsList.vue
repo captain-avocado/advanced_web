@@ -46,6 +46,10 @@ export default {
         margin-bottom: 5%;
         margin-right: 5%;
         flex: 1;
+        @include tablets {
+            margin-right: 0;
+            margin-bottom: 8%;
+        }
         // &:not(:nth-of-type(2n)) {
         //     margin-right: 15%;
         // }
