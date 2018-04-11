@@ -2,13 +2,13 @@
     .blog-section
         app-title Страница "Блог"
         .subtitle Добавить запись
-        .inputs(:class="{error: validation.hasError('validateDate'), emptyError: validation.hasError('validateText')}")
-            input.input.name(type="text" placeholder="Название" v-model="validateText")
-            <div class="message">{{ validation.firstError('validateText') }}</div>
-            input.input.date(type="text" placeholder="Дата" v-model="validateDate")
-            <div class="message">{{ validation.firstError('validateDate') }}</div>
-            textarea.input.textarea
-        .button(@click="showModal = true")
+        .inputs(:class="{error: validation.hasError('paperDate'), emptyError: validation.hasError('paperName')}")
+            input.input.name(type="text" placeholder="Название" v-model="paperName")
+            <div class="message">{{ validation.firstError('paperName') }}</div>
+            input.input.date(type="text" placeholder="Дата" v-model="paperDate")
+            <div class="message">{{ validation.firstError('paperDate') }}</div>
+            textarea.input.textarea(v-model="paperText")
+        .button(@click="addNewPaper")
             app-button Сохранить
         modal(
             v-if="showModal"
@@ -29,10 +29,10 @@ export default {
     },
     mixins: [require('simple-vue-validator').mixin],
     validators: {
-        validateText: value => {
+        paperName: value => {
             return Validator.value(value).minLength(5, 'Заполните поле')
         },
-        validateDate: value => {
+        paperDate: value => {
             const reg = /^(0?[1-9]|[12][0-9]|3[01])[\.](0?[1-9]|1[012])[\.]\d{4}$/;
             return Validator.value(value).regex(reg, 'Поле заполнено некорректно');
         }
@@ -40,17 +40,21 @@ export default {
     data() {
         return {
             showModal: false,
-            validateDate: "",
-            validateText: ""
+            paperDate: "",
+            paperName: "",
+            paperText: ""
         }
     },
-    // methods: {
-    //     addPaper() {
-    //         const paper = {
-    //             name: 
-    //         }
-    //     }
-    // }
+    methods: {
+        addNewPaper() {
+            const paper = {
+                name: this.paperName,
+                date: this.paperDate,
+                text: this.paperText
+            };
+            console.log(paper)
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
